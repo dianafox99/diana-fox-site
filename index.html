@@ -48,27 +48,18 @@
       margin: 20px auto 60px;
     }
 
-    /* =========================
-       MENU
-    ========================= */
-
     header {
       position: sticky;
       top: 10px;
       z-index: 50;
-
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-
       padding: 8px;
-
       background: rgba(12, 5, 18, 0.93);
       border: 1px solid var(--border);
       border-radius: 17px;
-
       backdrop-filter: blur(15px);
-
       box-shadow:
         0 12px 35px rgba(0,0,0,.35),
         0 0 22px rgba(181, 44, 244, .10);
@@ -78,16 +69,11 @@
       border: 0;
       background: transparent;
       color: #eee;
-
       padding: 14px 22px;
-
       border-radius: 12px;
-
       font-size: 16px;
       font-weight: 700;
-
       cursor: pointer;
-
       transition:
         transform .2s ease,
         background .2s ease,
@@ -106,16 +92,10 @@
           #c139ee,
           #8c27e8
         );
-
       color: white;
-
       box-shadow:
         0 0 22px rgba(194, 55, 245, .38);
     }
-
-    /* =========================
-       PAGE
-    ========================= */
 
     main {
       margin-top: 18px;
@@ -123,22 +103,16 @@
 
     .page {
       display: none;
-
       padding: 28px;
-
       border-radius: 22px;
-
       background:
         linear-gradient(
           145deg,
           rgba(15, 6, 22, .91),
           rgba(8, 3, 14, .94)
         );
-
       border: 1px solid rgba(198, 63, 255, .26);
-
       backdrop-filter: blur(9px);
-
       animation: pageIn .3s ease;
     }
 
@@ -177,32 +151,20 @@
       color: var(--muted);
     }
 
-    /* =========================
-       CARD
-    ========================= */
-
     .card {
       padding: 22px;
-
       border-radius: 18px;
-
       border: 1px solid rgba(203, 65, 255, .42);
-
       background:
         linear-gradient(
           145deg,
           rgba(37, 15, 45, .90),
           rgba(18, 8, 27, .92)
         );
-
       box-shadow:
         0 15px 35px rgba(0,0,0,.22),
         inset 0 0 30px rgba(190, 50, 240, .035);
     }
-
-    /* =========================
-       HOME TITLE
-    ========================= */
 
     .title-row {
       display: flex;
@@ -218,29 +180,19 @@
     .title-fox {
       width: 70px;
       height: 70px;
-
       object-fit: cover;
-
       border-radius: 16px;
-
       box-shadow:
         0 0 15px rgba(255, 56, 222, .45),
         0 0 30px rgba(174, 46, 255, .22);
     }
 
-    /* =========================
-       HOME GRID
-    ========================= */
-
     .home-grid {
       display: grid;
-
       grid-template-columns:
         minmax(0, 1.5fr)
         minmax(320px, .9fr);
-
       gap: 18px;
-
       align-items: start;
     }
 
@@ -250,22 +202,13 @@
       gap: 18px;
     }
 
-    /* =========================
-       VIDEO
-    ========================= */
-
     .video-frame {
       position: relative;
-
       width: 100%;
       aspect-ratio: 16 / 9;
-
       overflow: hidden;
-
       border-radius: 14px;
-
       background: #000;
-
       box-shadow:
         0 0 0 1px rgba(203, 65, 255, .15),
         0 12px 30px rgba(0,0,0,.35);
@@ -274,32 +217,19 @@
     .video-frame iframe {
       position: absolute;
       inset: 0;
-
       width: 100%;
       height: 100%;
-
       border: 0;
     }
-
-    /* =========================
-       MARATHON
-    ========================= */
 
     .marathon-image {
       width: 100%;
       height: auto;
-
       display: block;
-
       border-radius: 14px;
-
       box-shadow:
         0 12px 28px rgba(0,0,0,.38);
     }
-
-    /* =========================
-       ABOUT
-    ========================= */
 
     .about-card {
       padding: 26px;
@@ -311,12 +241,9 @@
 
     .about-layout {
       display: grid;
-
       grid-template-columns:
         220px minmax(0, 1fr);
-
       gap: 30px;
-
       align-items: center;
     }
 
@@ -329,34 +256,23 @@
     .about-photo {
       width: 210px;
       height: 300px;
-
       object-fit: cover;
-
       border-radius: 20px;
-
       border:
         1px solid
         rgba(231, 88, 255, .65);
-
       box-shadow:
         0 0 18px rgba(255, 54, 220, .35),
         0 0 35px rgba(157, 54, 255, .20);
-
       display: block;
     }
 
     .about-text {
       white-space: pre-line;
-
       font-size: 18px;
       line-height: 1.75;
-
       color: #eee;
     }
-
-    /* =========================
-       WATCH
-    ========================= */
 
     .section-label {
       font-size: 27px;
@@ -365,65 +281,92 @@
 
     .movie-row {
       display: grid;
-
       grid-template-columns:
         150px minmax(0, 1fr);
-
       gap: 24px;
-
       padding: 18px;
       margin-bottom: 15px;
-
       border-radius: 15px;
-
       background:
         rgba(28, 13, 35, .86);
-
       border:
         1px solid
         rgba(196, 61, 255, .30);
     }
 
-    .poster-placeholder {
+    .movie-poster {
       width: 140px;
       height: 205px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
+      object-fit: cover;
       border-radius: 12px;
-
-      background:
-        rgba(255,255,255,.04);
-
       border:
         1px solid
         rgba(255,255,255,.13);
+      box-shadow:
+        0 8px 22px rgba(0,0,0,.35);
+    }
 
+    .poster-placeholder {
+      width: 140px;
+      height: 205px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background:
+        rgba(255,255,255,.04);
+      border:
+        1px solid
+        rgba(255,255,255,.13);
       color: #aaa;
     }
 
-    /* =========================
-       CRITIC
-    ========================= */
+    .movie-title {
+      margin-bottom: 8px;
+    }
+
+    .movie-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .movie-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 14px;
+      background:
+        rgba(186, 44, 244, .16);
+      border:
+        1px solid
+        rgba(210, 80, 255, .35);
+      color: #f3dfff;
+    }
+
+    .movie-review {
+      white-space: pre-line;
+      line-height: 1.65;
+      color: #e8deed;
+      margin-bottom: 12px;
+    }
+
+    .movie-description {
+      color: #bfaec8;
+      font-size: 15px;
+      line-height: 1.55;
+    }
 
     .search-input {
       width: 100%;
-
       padding: 15px 18px;
       margin-bottom: 22px;
-
       color: white;
       font-size: 17px;
-
       outline: none;
-
       border-radius: 12px;
-
       background:
         rgba(20, 8, 28, .92);
-
       border:
         1px solid
         rgba(194, 60, 255, .42);
@@ -431,15 +374,20 @@
 
     .search-input:focus {
       border-color: #d060ff;
-
       box-shadow:
         0 0 16px
         rgba(196, 62, 255, .18);
     }
 
-    /* =========================
-       RATINGS
-    ========================= */
+    .empty-state {
+      padding: 24px;
+      text-align: center;
+      color: #c9b8d2;
+      border:
+        1px dashed
+        rgba(199, 70, 255, .35);
+      border-radius: 14px;
+    }
 
     .rating-board {
       display: flex;
@@ -449,20 +397,14 @@
 
     .rating-line {
       display: grid;
-
       grid-template-columns:
         80px 1fr;
-
-      min-height: 130px;
-
+      min-height: 140px;
       overflow: hidden;
-
       border-radius: 14px;
-
       border:
         1px solid
         rgba(195, 63, 255, .33);
-
       background:
         rgba(25, 11, 32, .86);
     }
@@ -471,17 +413,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       font-size: 31px;
       font-weight: bold;
-
       background:
         linear-gradient(
           135deg,
           rgba(194, 61, 255, .30),
           rgba(104, 36, 172, .19)
         );
-
       border-right:
         1px solid
         rgba(196, 65, 255, .30);
@@ -489,35 +428,50 @@
 
     .rating-posters {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
-
       padding: 12px;
+      align-items: flex-start;
     }
 
-    /* =========================
-       EXTRA
-    ========================= */
+    .rating-poster-card {
+      width: 95px;
+      text-align: center;
+    }
+
+    .rating-poster-card img {
+      width: 95px;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      border:
+        1px solid
+        rgba(255,255,255,.14);
+      box-shadow:
+        0 7px 18px rgba(0,0,0,.32);
+    }
+
+    .rating-poster-title {
+      margin-top: 7px;
+      font-size: 12px;
+      line-height: 1.25;
+      color: #e7dbe9;
+    }
 
     .extra-grid {
       display: grid;
-
       grid-template-columns:
         .9fr 1.8fr;
-
       gap: 18px;
     }
 
     .fox-den-image {
       width: 100%;
       max-width: 360px;
-
       display: block;
-
       margin: 10px auto 20px;
-
       border-radius: 18px;
-
       box-shadow:
         0 0 20px rgba(255, 57, 223, .25);
     }
@@ -527,39 +481,25 @@
       line-height: 1.7;
     }
 
-    /* =========================
-       SOCIALS
-    ========================= */
-
     .social-grid {
       display: grid;
-
       grid-template-columns:
         repeat(4, 1fr);
-
       gap: 14px;
     }
 
     .social-card {
       position: relative;
-
       display: block;
-
       overflow: hidden;
-
       min-height: 160px;
-
       border-radius: 15px;
-
       background:
         rgba(8, 4, 12, .88);
-
       border:
         1px solid
         rgba(197, 64, 255, .42);
-
       text-decoration: none;
-
       transition:
         transform .22s ease,
         box-shadow .22s ease,
@@ -570,10 +510,8 @@
       transform:
         translateY(-5px)
         scale(1.025);
-
       border-color:
         rgba(235, 120, 255, .86);
-
       box-shadow:
         0 12px 30px rgba(0,0,0,.35),
         0 0 18px rgba(194, 53, 246, .25);
@@ -582,40 +520,26 @@
     .social-card img {
       width: 100%;
       height: 160px;
-
       display: block;
-
       object-fit: cover;
     }
 
     .social-name {
       position: absolute;
-
       left: 8px;
       right: 8px;
       bottom: 8px;
-
       padding: 8px 10px;
-
       border-radius: 9px;
-
       color: white;
-
       font-weight: 700;
       text-align: center;
-
       background:
         rgba(6, 3, 9, .78);
-
       backdrop-filter: blur(7px);
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
     @media (max-width: 950px) {
-
       .home-grid,
       .extra-grid {
         grid-template-columns: 1fr;
@@ -628,7 +552,6 @@
     }
 
     @media (max-width: 760px) {
-
       .about-layout {
         grid-template-columns: 1fr;
       }
@@ -645,7 +568,6 @@
     }
 
     @media (max-width: 600px) {
-
       .site {
         width: 96%;
         margin-top: 8px;
@@ -661,9 +583,7 @@
 
       header button {
         flex: 1 1 45%;
-
         padding: 11px 10px;
-
         font-size: 14px;
       }
 
@@ -675,10 +595,10 @@
       .movie-row {
         grid-template-columns:
           100px 1fr;
-
         gap: 14px;
       }
 
+      .movie-poster,
       .poster-placeholder {
         width: 95px;
         height: 145px;
@@ -693,66 +613,37 @@
   </style>
 </head>
 
-
 <body>
 
 <div class="site">
 
-  <!-- =========================
-       MENU
-  ========================== -->
-
   <header>
 
-    <button
-      class="tab active"
-      onclick="showPage('home', this)"
-    >
+    <button class="tab active" onclick="showPage('home', this)">
       Головна
     </button>
 
-    <button
-      class="tab"
-      onclick="showPage('watch', this)"
-    >
+    <button class="tab" onclick="showPage('watch', this)">
       Перегляд
     </button>
 
-    <button
-      class="tab"
-      onclick="showPage('critic', this)"
-    >
+    <button class="tab" onclick="showPage('critic', this)">
       Кіно-критик
     </button>
 
-    <button
-      class="tab"
-      onclick="showPage('rating', this)"
-    >
+    <button class="tab" onclick="showPage('rating', this)">
       Оціночна категорія
     </button>
 
-    <button
-      class="tab"
-      onclick="showPage('extra', this)"
-    >
+    <button class="tab" onclick="showPage('extra', this)">
       Додатково
     </button>
 
   </header>
 
-
   <main>
 
-
-    <!-- =========================
-         HOME
-    ========================== -->
-
-    <section
-      id="home"
-      class="page active"
-    >
+    <section id="home" class="page active">
 
       <div class="title-row">
 
@@ -766,35 +657,20 @@
 
       </div>
 
-
       <div class="home-grid">
-
 
         <div class="home-left">
 
-
-          <!-- VIDEO -->
-
           <div class="card">
 
-            <h2>
-              Відеовізитка
-            </h2>
+            <h2>Відеовізитка</h2>
 
             <div class="video-frame">
 
               <iframe
                 src="https://www.youtube.com/embed/Jdq339sXEtQ"
                 title="Diana Fox — відеовізитка"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share
-                "
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               ></iframe>
 
@@ -802,18 +678,11 @@
 
           </div>
 
-
-          <!-- ABOUT -->
-
           <div class="card about-card">
 
-            <h2>
-              Про мене
-            </h2>
-
+            <h2>Про мене</h2>
 
             <div class="about-layout">
-
 
               <div class="about-photo-wrap">
 
@@ -825,7 +694,6 @@
 
               </div>
 
-
               <div
                 id="aboutText"
                 class="about-text"
@@ -833,16 +701,11 @@
                 Завантаження...
               </div>
 
-
             </div>
 
           </div>
 
-
         </div>
-
-
-        <!-- MARATHON -->
 
         <div class="card">
 
@@ -858,30 +721,17 @@
 
         </div>
 
-
       </div>
 
     </section>
 
+    <section id="watch" class="page">
 
-    <!-- =========================
-         WATCH
-    ========================== -->
-
-    <section
-      id="watch"
-      class="page"
-    >
-
-      <h1>
-        Перегляд
-      </h1>
-
+      <h1>Перегляд</h1>
 
       <h2 class="section-label">
         Зараз
       </h2>
-
 
       <div class="movie-row">
 
@@ -895,230 +745,120 @@
             Поточний фільм
           </h2>
 
-          <p>
-            Рік: —
-          </p>
+          <p>Рік: —</p>
+
+          <p>Час: —</p>
 
           <p>
-            Час: —
-          </p>
-
-          <p>
-            Тут буде інформація про поточний фільм.
+            Чергу перегляду підключимо наступним кроком через watch_queue.
           </p>
 
         </div>
 
       </div>
-
 
       <h2 class="section-label">
         Наступні
       </h2>
 
-
-      <div class="movie-row">
-
-        <div class="poster-placeholder">
-          Постер
-        </div>
-
-        <div>
-
-          <h2>
-            Наступний фільм
-          </h2>
-
-          <p>
-            Рік: —
-          </p>
-
-          <p>
-            Час: —
-          </p>
-
-        </div>
-
+      <div class="empty-state">
+        Тут пізніше автоматично з'явиться черга з таблиці watch_queue.
       </div>
-
-
-      <div class="movie-row">
-
-        <div class="poster-placeholder">
-          Постер
-        </div>
-
-        <div>
-
-          <h2>
-            Наступний фільм
-          </h2>
-
-          <p>
-            Рік: —
-          </p>
-
-          <p>
-            Час: —
-          </p>
-
-        </div>
-
-      </div>
-
 
     </section>
 
-
-    <!-- =========================
-         CRITIC
-    ========================== -->
-
-    <section
-      id="critic"
-      class="page"
-    >
+    <section id="critic" class="page">
 
       <h1>
         Кіно-критик
       </h1>
 
-
       <input
+        id="movieSearch"
         class="search-input"
         type="text"
         placeholder="Пошук за назвою фільму..."
       >
 
+      <div id="criticMovies">
 
-      <div class="movie-row">
-
-        <div class="poster-placeholder">
-          Постер
-        </div>
-
-        <div>
-
-          <h2>
-            Назва фільму
-          </h2>
-
-          <p>
-            Тут буде твоя рецензія на фільм.
-          </p>
-
-          <h3>
-            Оцінка: — / 10
-          </h3>
-
+        <div class="empty-state">
+          Завантаження фільмів...
         </div>
 
       </div>
 
-
     </section>
 
-
-    <!-- =========================
-         RATING
-    ========================== -->
-
-    <section
-      id="rating"
-      class="page"
-    >
+    <section id="rating" class="page">
 
       <h1>
         Оціночна категорія
       </h1>
 
-
       <div class="rating-board">
-
 
         <div class="rating-line">
           <div class="rating-number">10</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="10"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">9</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="9"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">8</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="8"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">7</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="7"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">6</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="6"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">5</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="5"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">4</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="4"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">3</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="3"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">2</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="2"></div>
         </div>
-
 
         <div class="rating-line">
           <div class="rating-number">1</div>
-          <div class="rating-posters"></div>
+          <div class="rating-posters" data-rating="1"></div>
         </div>
-
 
       </div>
 
     </section>
 
-
-    <!-- =========================
-         EXTRA
-    ========================== -->
-
-    <section
-      id="extra"
-      class="page"
-    >
+    <section id="extra" class="page">
 
       <h1>
         Додатково
       </h1>
 
-
       <div class="extra-grid">
-
-
-        <!-- FOX DEN -->
 
         <div class="card">
 
@@ -1126,13 +866,11 @@
             Лисяча нора 🦊
           </h2>
 
-
           <img
             class="fox-den-image"
             src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/1f3d9a08-422d-4c8d-be83-d8229253a249.png"
             alt="Лисяча нора"
           >
-
 
           <p class="fox-den-text">
             Тут пізніше можемо додати цікаві факти,
@@ -1142,192 +880,105 @@
 
         </div>
 
-
-        <!-- SOCIALS -->
-
         <div class="card">
 
           <h2>
             Мої сторінки
           </h2>
 
-
           <div class="social-grid">
 
-
-            <!-- TELEGRAM -->
-
-            <a
-              id="telegramCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="telegramCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tg.png"
                 alt="Telegram"
               >
-
               <span class="social-name">
                 Telegram
               </span>
-
             </a>
 
-
-            <!-- DISCORD -->
-
-            <a
-              id="discordCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="discordCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/ds.png"
                 alt="Discord"
               >
-
               <span class="social-name">
                 Discord
               </span>
-
             </a>
 
-
-            <!-- TIKTOK -->
-
-            <a
-              id="tiktokCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="tiktokCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tt.png"
                 alt="TikTok"
               >
-
               <span class="social-name">
                 TikTok
               </span>
-
             </a>
 
-
-            <!-- TWITCH -->
-
-            <a
-              id="twitchCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="twitchCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tw.png"
                 alt="Twitch"
               >
-
               <span class="social-name">
                 Twitch
               </span>
-
             </a>
 
-
-            <!-- YOUTUBE -->
-
-            <a
-              id="youtubeCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="youtubeCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/yt.png"
                 alt="YouTube"
               >
-
               <span class="social-name">
                 YouTube
               </span>
-
             </a>
 
-
-            <!-- DONATIK -->
-
-            <a
-              id="donatikCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="donatikCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/dona.png"
                 alt="Donatik"
               >
-
               <span class="social-name">
                 Donatik
               </span>
-
             </a>
 
-
-            <!-- MONOBANK -->
-
-            <a
-              id="monobankCard"
-              class="social-card"
-              href="#"
-            >
-
+            <a id="monobankCard" class="social-card" href="#">
               <img
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/mon.png"
                 alt="Monobank"
               >
-
               <span class="social-name">
                 Monobank
               </span>
-
             </a>
-
 
           </div>
 
         </div>
 
-
       </div>
 
     </section>
-
 
   </main>
 
 </div>
 
-
-<!-- =========================
-     SUPABASE
-========================== -->
-
-<script
-  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
   const supabaseUrl =
     "https://mitqazilithqmvuaxupa.supabase.co";
 
-
   const supabaseKey =
     "sb_publishable_aWz6Zf4Av8kUxGu7OlFE5w_-4zJ4y8a";
-
 
   const supabaseClient =
     supabase.createClient(
@@ -1335,15 +986,9 @@
       supabaseKey
     );
 
+  let allMovies = [];
 
-  /* =========================
-     PAGE TABS
-  ========================== */
-
-  function showPage(
-    id,
-    button
-  ) {
+  function showPage(id, button) {
 
     document
       .querySelectorAll(".page")
@@ -1351,22 +996,17 @@
         page.classList.remove("active");
       });
 
-
     document
       .querySelectorAll(".tab")
       .forEach(tab => {
         tab.classList.remove("active");
       });
 
-
     document
       .getElementById(id)
       .classList.add("active");
 
-
-    button
-      .classList.add("active");
-
+    button.classList.add("active");
 
     window.scrollTo({
       top: 0,
@@ -1374,11 +1014,6 @@
     });
 
   }
-
-
-  /* =========================
-     SOCIAL LINK
-  ========================== */
 
   function setSocialLink(
     elementId,
@@ -1390,41 +1025,28 @@
         elementId
       );
 
-
     if (!element) {
       return;
     }
 
-
     if (url) {
 
       element.href = url;
-
-      element.target =
-        "_blank";
-
-      element.rel =
-        "noopener noreferrer";
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
 
     } else {
 
       element.addEventListener(
         "click",
         function(event) {
-
           event.preventDefault();
-
         }
       );
 
     }
 
   }
-
-
-  /* =========================
-     SITE SETTINGS
-  ========================== */
 
   async function loadSiteSettings() {
 
@@ -1438,14 +1060,12 @@
         .limit(1)
         .maybeSingle();
 
-
     if (error) {
 
       console.error(
-        "Supabase error:",
+        "Supabase site_settings error:",
         error
       );
-
 
       document
         .getElementById(
@@ -1455,29 +1075,13 @@
         "Не вдалося завантажити текст.";
 
       return;
-
     }
-
 
     if (!data) {
-
-      document
-        .getElementById(
-          "aboutText"
-        )
-        .textContent =
-        "Текст поки не доданий.";
-
       return;
-
     }
 
-
-    /* ABOUT */
-
-    if (
-      data.about_text
-    ) {
+    if (data.about_text) {
 
       document
         .getElementById(
@@ -1488,44 +1092,35 @@
 
     }
 
-
-    /* SOCIAL LINKS */
-
     setSocialLink(
       "telegramCard",
       data.telegram_url
     );
-
 
     setSocialLink(
       "discordCard",
       data.discord_url
     );
 
-
     setSocialLink(
       "tiktokCard",
       data.tiktok_url
     );
-
 
     setSocialLink(
       "twitchCard",
       data.twitch_url
     );
 
-
     setSocialLink(
       "youtubeCard",
       data.youtube_url
     );
 
-
     setSocialLink(
       "donatikCard",
       data.donatello_url
     );
-
 
     setSocialLink(
       "monobankCard",
@@ -1534,8 +1129,287 @@
 
   }
 
+  async function loadMovies() {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from("movies")
+        .select("*")
+        .eq("is_visible", true)
+        .order(
+          "created_at",
+          { ascending: false }
+        );
+
+    if (error) {
+
+      console.error(
+        "Supabase movies error:",
+        error
+      );
+
+      document
+        .getElementById(
+          "criticMovies"
+        )
+        .innerHTML =
+        `
+          <div class="empty-state">
+            Не вдалося завантажити фільми.
+          </div>
+        `;
+
+      return;
+    }
+
+    allMovies =
+      data || [];
+
+    renderCriticMovies(
+      allMovies
+    );
+
+    renderRatings(
+      allMovies
+    );
+
+  }
+
+  function renderCriticMovies(
+    movies
+  ) {
+
+    const container =
+      document.getElementById(
+        "criticMovies"
+      );
+
+    if (!movies.length) {
+
+      container.innerHTML =
+      `
+        <div class="empty-state">
+          Поки що немає фільмів.
+        </div>
+      `;
+
+      return;
+    }
+
+    container.innerHTML =
+      movies
+        .map(movie => {
+
+          const poster =
+            movie.poster_url
+            ?
+            `
+              <img
+                class="movie-poster"
+                src="${escapeHtml(movie.poster_url)}"
+                alt="${escapeHtml(movie.title || "Постер")}"
+              >
+            `
+            :
+            `
+              <div class="poster-placeholder">
+                Постер
+              </div>
+            `;
+
+          const rating =
+            movie.rating
+            ? `${movie.rating} / 10`
+            : "Без оцінки";
+
+          const year =
+            movie.year
+            ? movie.year
+            : "—";
+
+          const category =
+            movie.category
+            ? `
+              <span class="movie-badge">
+                ${escapeHtml(movie.category)}
+              </span>
+            `
+            :
+            "";
+
+          const review =
+            movie.review
+            ? escapeHtml(movie.review)
+            : "Рецензію поки не додано.";
+
+          const description =
+            movie.description
+            ?
+            `
+              <div class="movie-description">
+                ${escapeHtml(movie.description)}
+              </div>
+            `
+            :
+            "";
+
+          return `
+            <article class="movie-row">
+
+              <div>
+                ${poster}
+              </div>
+
+              <div>
+
+                <h2 class="movie-title">
+                  ${escapeHtml(movie.title || "Без назви")}
+                </h2>
+
+                <div class="movie-meta">
+
+                  <span class="movie-badge">
+                    ⭐ ${rating}
+                  </span>
+
+                  <span class="movie-badge">
+                    🎬 ${year}
+                  </span>
+
+                  ${category}
+
+                </div>
+
+                <div class="movie-review">
+                  ${review}
+                </div>
+
+                ${description}
+
+              </div>
+
+            </article>
+          `;
+
+        })
+        .join("");
+
+  }
+
+  function renderRatings(
+    movies
+  ) {
+
+    document
+      .querySelectorAll(
+        ".rating-posters"
+      )
+      .forEach(container => {
+
+        container.innerHTML = "";
+
+      });
+
+    movies.forEach(movie => {
+
+      const rating =
+        Number(movie.rating);
+
+      if (
+        rating < 1 ||
+        rating > 10
+      ) {
+        return;
+      }
+
+      const container =
+        document.querySelector(
+          `.rating-posters[data-rating="${rating}"]`
+        );
+
+      if (!container) {
+        return;
+      }
+
+      const poster =
+        movie.poster_url
+        ?
+        `<img src="${escapeHtml(movie.poster_url)}" alt="${escapeHtml(movie.title || "Фільм")}">`
+        :
+        `
+          <div class="poster-placeholder" style="width:95px;height:140px;">
+            Постер
+          </div>
+        `;
+
+      container.insertAdjacentHTML(
+        "beforeend",
+        `
+          <div class="rating-poster-card">
+
+            ${poster}
+
+            <div class="rating-poster-title">
+              ${escapeHtml(movie.title || "Без назви")}
+            </div>
+
+          </div>
+        `
+      );
+
+    });
+
+  }
+
+  function escapeHtml(
+    value
+  ) {
+
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+  document
+    .getElementById(
+      "movieSearch"
+    )
+    .addEventListener(
+      "input",
+      function() {
+
+        const query =
+          this.value
+            .trim()
+            .toLowerCase();
+
+        const filtered =
+          allMovies.filter(movie => {
+
+            return String(
+              movie.title || ""
+            )
+              .toLowerCase()
+              .includes(query);
+
+          });
+
+        renderCriticMovies(
+          filtered
+        );
+
+      }
+    );
 
   loadSiteSettings();
+  loadMovies();
 
 </script>
 
