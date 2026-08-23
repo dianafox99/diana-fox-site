@@ -48,10 +48,6 @@
       margin: 20px auto 60px;
     }
 
-    /* =========================
-       MENU
-    ========================= */
-
     header {
       position: sticky;
       top: 10px;
@@ -113,10 +109,6 @@
         0 0 22px rgba(194, 55, 245, .38);
     }
 
-    /* =========================
-       PAGE
-    ========================= */
-
     main {
       margin-top: 18px;
     }
@@ -177,10 +169,6 @@
       color: var(--muted);
     }
 
-    /* =========================
-       CARD
-    ========================= */
-
     .card {
       padding: 22px;
 
@@ -199,10 +187,6 @@
         0 15px 35px rgba(0,0,0,.22),
         inset 0 0 30px rgba(190, 50, 240, .035);
     }
-
-    /* =========================
-       HOME
-    ========================= */
 
     .home-title {
       margin-bottom: 28px;
@@ -226,20 +210,12 @@
       gap: 18px;
     }
 
-    /* =========================
-       VIDEO
-    ========================= */
-
     .video-frame {
       position: relative;
-
       width: 100%;
       aspect-ratio: 16 / 9;
-
       overflow: hidden;
-
       border-radius: 14px;
-
       background: #000;
 
       box-shadow:
@@ -257,10 +233,6 @@
       border: 0;
     }
 
-    /* =========================
-       MARATHON
-    ========================= */
-
     .marathon-image {
       width: 100%;
       height: auto;
@@ -272,10 +244,6 @@
       box-shadow:
         0 12px 28px rgba(0,0,0,.38);
     }
-
-    /* =========================
-       ABOUT
-    ========================= */
 
     .about-card {
       padding: 26px;
@@ -329,10 +297,6 @@
 
       color: #eee;
     }
-
-    /* =========================
-       WATCH
-    ========================= */
 
     .section-label {
       font-size: 27px;
@@ -395,10 +359,6 @@
 
       color: #aaa;
     }
-
-    /* =========================
-       CRITIC
-    ========================= */
 
     .movie-title {
       margin-bottom: 8px;
@@ -488,10 +448,6 @@
 
       border-radius: 14px;
     }
-
-    /* =========================
-       RATING
-    ========================= */
 
     .rating-board {
       display: flex;
@@ -605,10 +561,6 @@
       color: #e7dbe9;
     }
 
-    /* =========================
-       EXTRA
-    ========================= */
-
     .extra-grid {
       display: grid;
 
@@ -636,10 +588,6 @@
       font-size: 17px;
       line-height: 1.7;
     }
-
-    /* =========================
-       SOCIALS
-    ========================= */
 
     .social-grid {
       display: grid;
@@ -719,10 +667,6 @@
 
       backdrop-filter: blur(7px);
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 950px) {
 
@@ -810,10 +754,7 @@
 
       .rating-posters {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
 
         gap: 12px;
       }
@@ -866,9 +807,7 @@
 
   <main>
 
-    <!-- =========================
-         HOME
-    ========================= -->
+    <!-- ГОЛОВНА -->
 
     <section id="home" class="page active">
 
@@ -948,9 +887,7 @@
 
     </section>
 
-    <!-- =========================
-         WATCH
-    ========================= -->
+    <!-- ПЕРЕГЛЯД -->
 
     <section id="watch" class="page">
 
@@ -1000,9 +937,7 @@
 
     </section>
 
-    <!-- =========================
-         CRITIC
-    ========================= -->
+    <!-- КІНО-КРИТИК -->
 
     <section id="critic" class="page">
 
@@ -1027,9 +962,7 @@
 
     </section>
 
-    <!-- =========================
-         RATING
-    ========================= -->
+    <!-- ОЦІНКИ -->
 
     <section id="rating" class="page">
 
@@ -1093,9 +1026,7 @@
 
     </section>
 
-    <!-- =========================
-         EXTRA
-    ========================= -->
+    <!-- ДОДАТКОВО -->
 
     <section id="extra" class="page">
 
@@ -1189,6 +1120,22 @@
               <span class="social-name">Monobank</span>
             </a>
 
+            <!-- STEAM -->
+
+            <a
+              id="steamCard"
+              class="social-card"
+              href="https://steamcommunity.com/profiles/76561198935259602/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/st.png"
+                alt="Steam"
+              >
+              <span class="social-name">Steam</span>
+            </a>
+
           </div>
 
         </div>
@@ -1219,10 +1166,6 @@
 
   let allMovies = [];
 
-  /* =========================
-     TABS
-  ========================= */
-
   function showPage(id, button) {
 
     document
@@ -1250,10 +1193,6 @@
 
   }
 
-  /* =========================
-     SOCIALS
-  ========================= */
-
   function setSocialLink(
     elementId,
     url
@@ -1274,22 +1213,9 @@
       element.target = "_blank";
       element.rel = "noopener noreferrer";
 
-    } else {
-
-      element.addEventListener(
-        "click",
-        function(event) {
-          event.preventDefault();
-        }
-      );
-
     }
 
   }
-
-  /* =========================
-     SITE SETTINGS
-  ========================= */
 
   async function loadSiteSettings() {
 
@@ -1370,11 +1296,22 @@
       data.monobank_url
     );
 
-  }
+    /*
+      Якщо steam_url заповнено в Supabase —
+      використаємо його.
 
-  /* =========================
-     MOVIES
-  ========================= */
+      Якщо ні — залишиться твій профіль,
+      який уже прописаний у HTML.
+    */
+
+    if (data.steam_url) {
+      setSocialLink(
+        "steamCard",
+        data.steam_url
+      );
+    }
+
+  }
 
   async function loadMovies() {
 
@@ -1415,11 +1352,6 @@
     allMovies =
       data || [];
 
-    /*
-      Додаткове локальне сортування
-      українською мовою.
-    */
-
     allMovies.sort(
       (a, b) =>
         String(a.title || "")
@@ -1441,10 +1373,6 @@
     );
 
   }
-
-  /* =========================
-     CRITIC CARDS
-  ========================= */
 
   function renderCriticMovies(
     movies
@@ -1568,10 +1496,6 @@
 
   }
 
-  /* =========================
-     RATINGS
-  ========================= */
-
   function renderRatings(
     movies
   ) {
@@ -1648,10 +1572,6 @@
 
   }
 
-  /* =========================
-     SECURITY
-  ========================= */
-
   function escapeHtml(value) {
 
     return String(value ?? "")
@@ -1662,10 +1582,6 @@
       .replaceAll("'", "&#039;");
 
   }
-
-  /* =========================
-     SEARCH
-  ========================= */
 
   document
     .getElementById(
@@ -1697,10 +1613,6 @@
 
       }
     );
-
-  /* =========================
-     START
-  ========================= */
 
   loadSiteSettings();
   loadMovies();
