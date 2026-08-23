@@ -214,8 +214,11 @@
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
+
       overflow: hidden;
+
       border-radius: 14px;
+
       background: #000;
 
       box-shadow:
@@ -369,7 +372,7 @@
       flex-wrap: wrap;
       gap: 10px;
 
-      margin-bottom: 12px;
+      margin-bottom: 18px;
     }
 
     .movie-badge {
@@ -389,21 +392,35 @@
       color: #f3dfff;
     }
 
-    .movie-review {
-      white-space: pre-line;
+    .movie-section {
+      margin-top: 17px;
+    }
 
-      line-height: 1.65;
+    .movie-section-title {
+      margin-bottom: 7px;
 
-      color: #e8deed;
+      font-size: 17px;
+      font-weight: 700;
 
-      margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .movie-description {
-      color: #bfaec8;
+      white-space: pre-line;
+
+      color: #c9b9d1;
 
       font-size: 15px;
-      line-height: 1.55;
+      line-height: 1.6;
+    }
+
+    .movie-review {
+      white-space: pre-line;
+
+      color: #eee3f1;
+
+      font-size: 17px;
+      line-height: 1.65;
     }
 
     .search-input {
@@ -754,7 +771,10 @@
 
       .rating-posters {
         grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
 
         gap: 12px;
       }
@@ -806,8 +826,6 @@
   </header>
 
   <main>
-
-    <!-- ГОЛОВНА -->
 
     <section id="home" class="page active">
 
@@ -887,8 +905,6 @@
 
     </section>
 
-    <!-- ПЕРЕГЛЯД -->
-
     <section id="watch" class="page">
 
       <h1>
@@ -937,8 +953,6 @@
 
     </section>
 
-    <!-- КІНО-КРИТИК -->
-
     <section id="critic" class="page">
 
       <h1>
@@ -961,8 +975,6 @@
       </div>
 
     </section>
-
-    <!-- ОЦІНКИ -->
 
     <section id="rating" class="page">
 
@@ -1026,8 +1038,6 @@
 
     </section>
 
-    <!-- ДОДАТКОВО -->
-
     <section id="extra" class="page">
 
       <h1>
@@ -1069,7 +1079,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tg.png"
                 alt="Telegram"
               >
-              <span class="social-name">Telegram</span>
+              <span class="social-name">
+                Telegram
+              </span>
             </a>
 
             <a id="discordCard" class="social-card" href="#">
@@ -1077,7 +1089,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/ds.png"
                 alt="Discord"
               >
-              <span class="social-name">Discord</span>
+              <span class="social-name">
+                Discord
+              </span>
             </a>
 
             <a id="tiktokCard" class="social-card" href="#">
@@ -1085,7 +1099,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tt.png"
                 alt="TikTok"
               >
-              <span class="social-name">TikTok</span>
+              <span class="social-name">
+                TikTok
+              </span>
             </a>
 
             <a id="twitchCard" class="social-card" href="#">
@@ -1093,7 +1109,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tw.png"
                 alt="Twitch"
               >
-              <span class="social-name">Twitch</span>
+              <span class="social-name">
+                Twitch
+              </span>
             </a>
 
             <a id="youtubeCard" class="social-card" href="#">
@@ -1101,7 +1119,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/yt.png"
                 alt="YouTube"
               >
-              <span class="social-name">YouTube</span>
+              <span class="social-name">
+                YouTube
+              </span>
             </a>
 
             <a id="donatikCard" class="social-card" href="#">
@@ -1109,7 +1129,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/dona.png"
                 alt="Donatik"
               >
-              <span class="social-name">Donatik</span>
+              <span class="social-name">
+                Donatik
+              </span>
             </a>
 
             <a id="monobankCard" class="social-card" href="#">
@@ -1117,10 +1139,10 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/mon.png"
                 alt="Monobank"
               >
-              <span class="social-name">Monobank</span>
+              <span class="social-name">
+                Monobank
+              </span>
             </a>
-
-            <!-- STEAM -->
 
             <a
               id="steamCard"
@@ -1133,7 +1155,9 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/st.png"
                 alt="Steam"
               >
-              <span class="social-name">Steam</span>
+              <span class="social-name">
+                Steam
+              </span>
             </a>
 
           </div>
@@ -1296,19 +1320,13 @@
       data.monobank_url
     );
 
-    /*
-      Якщо steam_url заповнено в Supabase —
-      використаємо його.
-
-      Якщо ні — залишиться твій профіль,
-      який уже прописаний у HTML.
-    */
-
     if (data.steam_url) {
+
       setSocialLink(
         "steamCard",
         data.steam_url
       );
+
     }
 
   }
@@ -1322,11 +1340,7 @@
       await supabaseClient
         .from("movies")
         .select("*")
-        .eq("is_visible", true)
-        .order(
-          "title",
-          { ascending: true }
-        );
+        .eq("is_visible", true);
 
     if (error) {
 
@@ -1352,6 +1366,17 @@
     allMovies =
       data || [];
 
+    /*
+      Розумне сортування:
+      Ілюзія обману 1
+      Ілюзія обману 2
+      Ілюзія обману 3
+      ...
+      Ілюзія обману 10
+
+      а не 1, 10, 2.
+    */
+
     allMovies.sort(
       (a, b) =>
         String(a.title || "")
@@ -1359,7 +1384,8 @@
             String(b.title || ""),
             "uk",
             {
-              sensitivity: "base"
+              sensitivity: "base",
+              numeric: true
             }
           )
     );
@@ -1437,21 +1463,15 @@
             :
             "";
 
+          const description =
+            movie.description
+            ? escapeHtml(movie.description)
+            : "Опис поки не додано.";
+
           const review =
             movie.review
             ? escapeHtml(movie.review)
-            : "Рецензію поки не додано.";
-
-          const description =
-            movie.description
-            ?
-            `
-              <div class="movie-description">
-                ${escapeHtml(movie.description)}
-              </div>
-            `
-            :
-            "";
+            : "Мою думку поки не додано.";
 
           return `
             <article class="movie-row">
@@ -1480,11 +1500,29 @@
 
                 </div>
 
-                <div class="movie-review">
-                  ${review}
+                <div class="movie-section">
+
+                  <div class="movie-section-title">
+                    Опис фільму:
+                  </div>
+
+                  <div class="movie-description">
+                    ${description}
+                  </div>
+
                 </div>
 
-                ${description}
+                <div class="movie-section">
+
+                  <div class="movie-section-title">
+                    Моя думка:
+                  </div>
+
+                  <div class="movie-review">
+                    ${review}
+                  </div>
+
+                </div>
 
               </div>
 
