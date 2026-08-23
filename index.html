@@ -14,33 +14,48 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --bg: #08040d;
+      --panel: rgba(15, 6, 22, 0.88);
+      --card: rgba(30, 12, 38, 0.88);
+      --border: rgba(203, 65, 255, 0.42);
+      --purple: #b92cf4;
+      --purple2: #8e2de2;
+      --pink: #ff4fd8;
+      --text: #ffffff;
+      --muted: #ddd2e5;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
 
       background:
-        linear-gradient(rgba(7, 2, 12, 0.20), rgba(7, 2, 12, 0.35)),
+        linear-gradient(
+          rgba(7, 2, 12, 0.25),
+          rgba(7, 2, 12, 0.55)
+        ),
         url("https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/6cfe15f0-51ef-4a4a-b3b9-611af3d2eccb.png")
         center top / cover fixed;
 
-      background-color: #08050d;
+      background-color: var(--bg);
     }
-
-    /* ===== ОСНОВНИЙ КОНТЕЙНЕР ===== */
 
     .site {
       width: min(1180px, 94%);
-      margin: 28px auto 60px;
+      margin: 20px auto 60px;
     }
 
-    /* ===== МЕНЮ ===== */
+    /* =========================
+       MENU
+    ========================= */
 
     header {
       position: sticky;
-      top: 12px;
-      z-index: 100;
+      top: 10px;
+      z-index: 50;
 
       display: flex;
       flex-wrap: wrap;
@@ -48,14 +63,15 @@
 
       padding: 8px;
 
-      background: rgba(12, 5, 18, 0.90);
-      border: 1px solid rgba(196, 73, 255, 0.42);
+      background: rgba(12, 5, 18, 0.93);
+      border: 1px solid var(--border);
       border-radius: 17px;
 
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(15px);
+
       box-shadow:
-        0 10px 35px rgba(0,0,0,.35),
-        0 0 22px rgba(190, 40, 255, .08);
+        0 12px 35px rgba(0,0,0,.35),
+        0 0 22px rgba(181, 44, 244, .10);
     }
 
     header button {
@@ -66,60 +82,71 @@
       padding: 14px 22px;
 
       border-radius: 12px;
-      font-size: 17px;
-      font-weight: 600;
+
+      font-size: 16px;
+      font-weight: 700;
 
       cursor: pointer;
 
       transition:
-        background .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease;
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
     }
 
     header button:hover {
-      background: rgba(180, 45, 225, .22);
       transform: translateY(-2px);
+      background: rgba(190, 55, 245, .15);
     }
 
     header button.active {
-      color: #fff;
+      background:
+        linear-gradient(
+          135deg,
+          #c139ee,
+          #8c27e8
+        );
 
-      background: linear-gradient(
-        135deg,
-        #c536e4,
-        #8d27ef
-      );
+      color: white;
 
       box-shadow:
-        0 5px 18px rgba(177, 45, 230, .35);
+        0 0 22px rgba(194, 55, 245, .38);
     }
 
-    /* ===== СТОРІНКИ ===== */
+    /* =========================
+       PAGE
+    ========================= */
 
     main {
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     .page {
       display: none;
 
-      background: rgba(11, 4, 17, .84);
-      border: 1px solid rgba(193, 66, 255, .25);
+      padding: 28px;
+
       border-radius: 22px;
 
-      padding: 30px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 6, 22, .91),
+          rgba(8, 3, 14, .94)
+        );
 
-      backdrop-filter: blur(8px);
+      border: 1px solid rgba(198, 63, 255, .26);
 
-      animation: appear .35s ease;
+      backdrop-filter: blur(9px);
+
+      animation: pageIn .3s ease;
     }
 
     .page.active {
       display: block;
     }
 
-    @keyframes appear {
+    @keyframes pageIn {
       from {
         opacity: 0;
         transform: translateY(8px);
@@ -131,18 +158,9 @@
       }
     }
 
-    /* ===== ЗАГОЛОВКИ ===== */
-
-    .title-row {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
     h1 {
-      font-size: clamp(42px, 6vw, 62px);
-      margin: 0;
+      margin: 0 0 28px;
+      font-size: clamp(42px, 6vw, 60px);
       line-height: 1;
     }
 
@@ -155,67 +173,102 @@
       font-size: 21px;
     }
 
-    .title-fox {
-      width: 72px;
-      height: 72px;
-
-      object-fit: contain;
-
-      filter:
-        drop-shadow(0 0 8px #ff43dc)
-        drop-shadow(0 0 18px rgba(182, 46, 255, .7));
+    p {
+      color: var(--muted);
     }
 
-    /* ===== КАРТКИ ===== */
+    /* =========================
+       CARD
+    ========================= */
 
     .card {
+      padding: 22px;
+
+      border-radius: 18px;
+
+      border: 1px solid rgba(203, 65, 255, .42);
+
       background:
         linear-gradient(
           145deg,
-          rgba(35, 13, 42, .88),
-          rgba(16, 9, 25, .92)
+          rgba(37, 15, 45, .90),
+          rgba(18, 8, 27, .92)
         );
-
-      border: 1px solid rgba(205, 78, 255, .45);
-      border-radius: 17px;
-
-      padding: 22px;
 
       box-shadow:
         0 15px 35px rgba(0,0,0,.22),
-        inset 0 0 25px rgba(166, 37, 206, .03);
+        inset 0 0 30px rgba(190, 50, 240, .035);
     }
 
-    /* ===== ГОЛОВНА ===== */
+    /* =========================
+       HOME TITLE
+    ========================= */
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .title-row h1 {
+      margin: 0;
+    }
+
+    .title-fox {
+      width: 70px;
+      height: 70px;
+
+      object-fit: cover;
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 0 15px rgba(255, 56, 222, .45),
+        0 0 30px rgba(174, 46, 255, .22);
+    }
+
+    /* =========================
+       HOME GRID
+    ========================= */
 
     .home-grid {
       display: grid;
-      grid-template-columns: 1.55fr .9fr;
+
+      grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(320px, .9fr);
+
       gap: 18px;
+
       align-items: start;
     }
 
-    .left-column {
+    .home-left {
       display: flex;
       flex-direction: column;
       gap: 18px;
     }
 
-    /* ===== YOUTUBE ===== */
+    /* =========================
+       VIDEO
+    ========================= */
 
     .video-frame {
       position: relative;
+
       width: 100%;
       aspect-ratio: 16 / 9;
 
       overflow: hidden;
-      border-radius: 13px;
+
+      border-radius: 14px;
 
       background: #000;
 
       box-shadow:
-        0 0 0 1px rgba(221, 78, 255, .2),
-        0 8px 25px rgba(0,0,0,.35);
+        0 0 0 1px rgba(203, 65, 255, .15),
+        0 12px 30px rgba(0,0,0,.35);
     }
 
     .video-frame iframe {
@@ -228,66 +281,107 @@
       border: 0;
     }
 
-    /* ===== МАРАФОН ===== */
+    /* =========================
+       MARATHON
+    ========================= */
 
     .marathon-image {
       width: 100%;
+      height: auto;
+
       display: block;
 
       border-radius: 14px;
 
-      border: 1px solid rgba(255, 199, 49, .38);
-
       box-shadow:
-        0 10px 28px rgba(0,0,0,.35);
+        0 12px 28px rgba(0,0,0,.38);
     }
 
-    /* ===== ПРО МЕНЕ ===== */
+    /* =========================
+       ABOUT
+    ========================= */
 
-    .about-content {
+    .about-card {
+      padding: 26px;
+    }
+
+    .about-card h2 {
+      margin-bottom: 20px;
+    }
+
+    .about-layout {
       display: grid;
-      grid-template-columns: 155px 1fr;
-      gap: 24px;
+
+      grid-template-columns:
+        220px minmax(0, 1fr);
+
+      gap: 30px;
+
       align-items: center;
     }
 
-    .about-fox {
-      width: 150px;
-      max-height: 190px;
+    .about-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      object-fit: contain;
+    .about-photo {
+      width: 210px;
+      height: 300px;
 
-      filter:
-        drop-shadow(0 0 9px #ff37dd)
-        drop-shadow(0 0 22px rgba(183, 42, 255, .7));
+      object-fit: cover;
+
+      border-radius: 20px;
+
+      border:
+        1px solid
+        rgba(231, 88, 255, .65);
+
+      box-shadow:
+        0 0 18px rgba(255, 54, 220, .35),
+        0 0 35px rgba(157, 54, 255, .20);
+
+      display: block;
     }
 
     .about-text {
+      white-space: pre-line;
+
       font-size: 18px;
       line-height: 1.75;
+
       color: #eee;
-      white-space: pre-line;
     }
 
-    /* ===== ПЕРЕГЛЯД ===== */
+    /* =========================
+       WATCH
+    ========================= */
 
     .section-label {
-      margin: 25px 0 14px;
-      font-size: 26px;
+      font-size: 27px;
+      margin: 26px 0 14px;
     }
 
     .movie-row {
       display: grid;
-      grid-template-columns: 150px 1fr;
+
+      grid-template-columns:
+        150px minmax(0, 1fr);
+
       gap: 24px;
 
-      margin-bottom: 16px;
-
       padding: 18px;
+      margin-bottom: 15px;
 
-      background: rgba(27, 14, 34, .86);
-      border: 1px solid rgba(194, 67, 255, .30);
       border-radius: 15px;
+
+      background:
+        rgba(28, 13, 35, .86);
+
+      border:
+        1px solid
+        rgba(196, 61, 255, .30);
     }
 
     .poster-placeholder {
@@ -295,42 +389,57 @@
       height: 205px;
 
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
-      text-align: center;
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
 
       color: #aaa;
-
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 11px;
     }
 
-    /* ===== КІНО-КРИТИК ===== */
+    /* =========================
+       CRITIC
+    ========================= */
 
     .search-input {
       width: 100%;
 
-      margin-bottom: 24px;
       padding: 15px 18px;
+      margin-bottom: 22px;
 
       color: white;
       font-size: 17px;
 
       outline: none;
 
-      background: rgba(20, 8, 28, .92);
-      border: 1px solid rgba(190, 62, 255, .45);
       border-radius: 12px;
+
+      background:
+        rgba(20, 8, 28, .92);
+
+      border:
+        1px solid
+        rgba(194, 60, 255, .42);
     }
 
     .search-input:focus {
-      border-color: #cf4dff;
-      box-shadow: 0 0 16px rgba(197, 62, 255, .18);
+      border-color: #d060ff;
+
+      box-shadow:
+        0 0 16px
+        rgba(196, 62, 255, .18);
     }
 
-    /* ===== ОЦІНКИ ===== */
+    /* =========================
+       RATINGS
+    ========================= */
 
     .rating-board {
       display: flex;
@@ -340,54 +449,94 @@
 
     .rating-line {
       display: grid;
-      grid-template-columns: 82px 1fr;
 
-      min-height: 135px;
+      grid-template-columns:
+        80px 1fr;
+
+      min-height: 130px;
 
       overflow: hidden;
 
-      background: rgba(25, 11, 32, .85);
-      border: 1px solid rgba(194, 64, 255, .34);
-      border-radius: 13px;
+      border-radius: 14px;
+
+      border:
+        1px solid
+        rgba(195, 63, 255, .33);
+
+      background:
+        rgba(25, 11, 32, .86);
     }
 
     .rating-number {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
-      font-size: 32px;
+      font-size: 31px;
       font-weight: bold;
 
       background:
         linear-gradient(
           135deg,
-          rgba(183, 45, 221, .32),
-          rgba(94, 28, 160, .22)
+          rgba(194, 61, 255, .30),
+          rgba(104, 36, 172, .19)
         );
 
-      border-right: 1px solid rgba(199, 67, 255, .35);
+      border-right:
+        1px solid
+        rgba(196, 65, 255, .30);
     }
 
     .rating-posters {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
 
       padding: 12px;
     }
 
-    /* ===== ДОДАТКОВО ===== */
+    /* =========================
+       EXTRA
+    ========================= */
 
     .extra-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+
+      grid-template-columns:
+        .9fr 1.8fr;
+
       gap: 18px;
     }
 
+    .fox-den-image {
+      width: 100%;
+      max-width: 360px;
+
+      display: block;
+
+      margin: 10px auto 20px;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 0 20px rgba(255, 57, 223, .25);
+    }
+
+    .fox-den-text {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       SOCIALS
+    ========================= */
+
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 14px;
     }
 
@@ -398,33 +547,41 @@
 
       overflow: hidden;
 
-      min-height: 155px;
+      min-height: 160px;
 
-      background: rgba(10, 5, 15, .85);
-      border: 1px solid rgba(200, 67, 255, .40);
       border-radius: 15px;
+
+      background:
+        rgba(8, 4, 12, .88);
+
+      border:
+        1px solid
+        rgba(197, 64, 255, .42);
 
       text-decoration: none;
 
       transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
     }
 
     .social-card:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform:
+        translateY(-5px)
+        scale(1.025);
 
-      border-color: rgba(231, 113, 255, .85);
+      border-color:
+        rgba(235, 120, 255, .86);
 
       box-shadow:
-        0 12px 28px rgba(0,0,0,.35),
-        0 0 18px rgba(189, 49, 244, .20);
+        0 12px 30px rgba(0,0,0,.35),
+        0 0 18px rgba(194, 53, 246, .25);
     }
 
     .social-card img {
       width: 100%;
-      height: 155px;
+      height: 160px;
 
       display: block;
 
@@ -433,25 +590,31 @@
 
     .social-name {
       position: absolute;
+
       left: 8px;
       right: 8px;
       bottom: 8px;
 
-      padding: 7px 10px;
+      padding: 8px 10px;
+
+      border-radius: 9px;
 
       color: white;
-      font-weight: bold;
+
+      font-weight: 700;
       text-align: center;
 
-      background: rgba(5, 2, 8, .75);
-      border-radius: 8px;
+      background:
+        rgba(6, 3, 9, .78);
 
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(7px);
     }
 
-    /* ===== МОБІЛЬНА ВЕРСІЯ ===== */
+    /* =========================
+       MOBILE
+    ========================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
 
       .home-grid,
       .extra-grid {
@@ -459,15 +622,25 @@
       }
 
       .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      .about-layout {
+        grid-template-columns: 1fr;
       }
 
-      .about-content {
-        grid-template-columns: 110px 1fr;
+      .about-photo {
+        width: min(260px, 90%);
+        height: 360px;
       }
 
-      .about-fox {
-        width: 105px;
+      .social-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
     }
 
@@ -475,11 +648,11 @@
 
       .site {
         width: 96%;
-        margin-top: 10px;
+        margin-top: 8px;
       }
 
       .page {
-        padding: 18px;
+        padding: 17px;
       }
 
       header {
@@ -487,8 +660,10 @@
       }
 
       header button {
-        flex: 1 1 auto;
+        flex: 1 1 45%;
+
         padding: 11px 10px;
+
         font-size: 14px;
       }
 
@@ -497,17 +672,11 @@
         height: 52px;
       }
 
-      .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about-fox {
-        margin: auto;
-      }
-
       .movie-row {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns:
+          100px 1fr;
+
+        gap: 14px;
       }
 
       .poster-placeholder {
@@ -515,55 +684,75 @@
         height: 145px;
       }
 
-      .social-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .social-card,
       .social-card img {
-        min-height: 120px;
-        height: 120px;
+        min-height: 125px;
+        height: 125px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
 <div class="site">
 
-  <!-- ===== МЕНЮ ===== -->
+  <!-- =========================
+       MENU
+  ========================== -->
 
   <header>
-    <button class="tab active" onclick="showPage('home', this)">
+
+    <button
+      class="tab active"
+      onclick="showPage('home', this)"
+    >
       Головна
     </button>
 
-    <button class="tab" onclick="showPage('watch', this)">
+    <button
+      class="tab"
+      onclick="showPage('watch', this)"
+    >
       Перегляд
     </button>
 
-    <button class="tab" onclick="showPage('critic', this)">
+    <button
+      class="tab"
+      onclick="showPage('critic', this)"
+    >
       Кіно-критик
     </button>
 
-    <button class="tab" onclick="showPage('rating', this)">
+    <button
+      class="tab"
+      onclick="showPage('rating', this)"
+    >
       Оціночна категорія
     </button>
 
-    <button class="tab" onclick="showPage('extra', this)">
+    <button
+      class="tab"
+      onclick="showPage('extra', this)"
+    >
       Додатково
     </button>
+
   </header>
 
 
   <main>
 
-    <!-- ===================================== -->
-    <!-- ГОЛОВНА -->
-    <!-- ===================================== -->
 
-    <section id="home" class="page active">
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section
+      id="home"
+      class="page active"
+    >
 
       <div class="title-row">
 
@@ -572,7 +761,7 @@
         <img
           class="title-fox"
           src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/e6f6ee31-e059-4c9f-a939-5c3755060727.png"
-          alt="Неонове лисеня"
+          alt="Diana Fox"
         >
 
       </div>
@@ -580,88 +769,119 @@
 
       <div class="home-grid">
 
-        <div class="left-column">
 
-          <!-- ВІДЕО -->
+        <div class="home-left">
+
+
+          <!-- VIDEO -->
 
           <div class="card">
 
-            <h2>Відеовізитка</h2>
+            <h2>
+              Відеовізитка
+            </h2>
 
             <div class="video-frame">
 
               <iframe
                 src="https://www.youtube.com/embed/Jdq339sXEtQ"
                 title="Diana Fox — відеовізитка"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share
+                "
+                allowfullscreen
+              ></iframe>
 
             </div>
 
           </div>
 
 
-          <!-- ПРО МЕНЕ -->
+          <!-- ABOUT -->
 
-          <div class="card">
+          <div class="card about-card">
 
-            <div class="about-content">
+            <h2>
+              Про мене
+            </h2>
 
-              <img
-                class="about-fox"
-                src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/e6f6ee31-e059-4c9f-a939-5c3755060727.png"
-                alt="Неонове лисеня"
-              >
 
-              <div>
+            <div class="about-layout">
 
-                <h2>Про мене</h2>
 
-                <div
-                  id="aboutText"
-                  class="about-text"
+              <div class="about-photo-wrap">
+
+                <img
+                  class="about-photo"
+                  src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/fbb3ac98-7104-417b-bcf7-fa4295187e1a.png"
+                  alt="Diana Fox"
                 >
-                  Завантажую...
-                </div>
 
               </div>
 
+
+              <div
+                id="aboutText"
+                class="about-text"
+              >
+                Завантаження...
+              </div>
+
+
             </div>
 
           </div>
+
 
         </div>
 
 
-        <!-- АФІША -->
+        <!-- MARATHON -->
 
         <div class="card">
 
-          <h2>Суботній кіномарафон 🍿</h2>
+          <h2>
+            Суботній кіномарафон 🍿
+          </h2>
 
           <img
             class="marathon-image"
             src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/marathon/d2c934b4-25d6-4523-b0ff-18afe03f9b31.png"
-            alt="Афіша суботнього кіномарафону"
+            alt="Суботній кіномарафон"
           >
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <!-- ===================================== -->
-    <!-- ПЕРЕГЛЯД -->
-    <!-- ===================================== -->
+    <!-- =========================
+         WATCH
+    ========================== -->
 
-    <section id="watch" class="page">
+    <section
+      id="watch"
+      class="page"
+    >
 
-      <h1>Перегляд</h1>
+      <h1>
+        Перегляд
+      </h1>
 
-      <h2 class="section-label">Зараз</h2>
+
+      <h2 class="section-label">
+        Зараз
+      </h2>
+
 
       <div class="movie-row">
 
@@ -670,18 +890,32 @@
         </div>
 
         <div>
-          <h2>Поточний фільм</h2>
-          <p>Рік: —</p>
-          <p>Час: —</p>
+
+          <h2>
+            Поточний фільм
+          </h2>
+
+          <p>
+            Рік: —
+          </p>
+
+          <p>
+            Час: —
+          </p>
+
           <p>
             Тут буде інформація про поточний фільм.
           </p>
+
         </div>
 
       </div>
 
 
-      <h2 class="section-label">Наступні</h2>
+      <h2 class="section-label">
+        Наступні
+      </h2>
+
 
       <div class="movie-row">
 
@@ -690,12 +924,23 @@
         </div>
 
         <div>
-          <h2>Наступний фільм</h2>
-          <p>Рік: —</p>
-          <p>Час: —</p>
+
+          <h2>
+            Наступний фільм
+          </h2>
+
+          <p>
+            Рік: —
+          </p>
+
+          <p>
+            Час: —
+          </p>
+
         </div>
 
       </div>
+
 
       <div class="movie-row">
 
@@ -704,23 +949,40 @@
         </div>
 
         <div>
-          <h2>Наступний фільм</h2>
-          <p>Рік: —</p>
-          <p>Час: —</p>
+
+          <h2>
+            Наступний фільм
+          </h2>
+
+          <p>
+            Рік: —
+          </p>
+
+          <p>
+            Час: —
+          </p>
+
         </div>
 
       </div>
+
 
     </section>
 
 
-    <!-- ===================================== -->
-    <!-- КІНО-КРИТИК -->
-    <!-- ===================================== -->
+    <!-- =========================
+         CRITIC
+    ========================== -->
 
-    <section id="critic" class="page">
+    <section
+      id="critic"
+      class="page"
+    >
 
-      <h1>Кіно-критик</h1>
+      <h1>
+        Кіно-критик
+      </h1>
+
 
       <input
         class="search-input"
@@ -728,6 +990,7 @@
         placeholder="Пошук за назвою фільму..."
       >
 
+
       <div class="movie-row">
 
         <div class="poster-placeholder">
@@ -735,106 +998,143 @@
         </div>
 
         <div>
-          <h2>Назва фільму</h2>
+
+          <h2>
+            Назва фільму
+          </h2>
 
           <p>
             Тут буде твоя рецензія на фільм.
           </p>
 
-          <h3>Оцінка: — / 10</h3>
+          <h3>
+            Оцінка: — / 10
+          </h3>
+
         </div>
 
       </div>
 
+
     </section>
 
 
-    <!-- ===================================== -->
-    <!-- ОЦІНКИ -->
-    <!-- ===================================== -->
+    <!-- =========================
+         RATING
+    ========================== -->
 
-    <section id="rating" class="page">
+    <section
+      id="rating"
+      class="page"
+    >
 
-      <h1>Оціночна категорія</h1>
+      <h1>
+        Оціночна категорія
+      </h1>
+
 
       <div class="rating-board">
+
 
         <div class="rating-line">
           <div class="rating-number">10</div>
           <div class="rating-posters"></div>
         </div>
 
+
         <div class="rating-line">
           <div class="rating-number">9</div>
           <div class="rating-posters"></div>
         </div>
+
 
         <div class="rating-line">
           <div class="rating-number">8</div>
           <div class="rating-posters"></div>
         </div>
 
+
         <div class="rating-line">
           <div class="rating-number">7</div>
           <div class="rating-posters"></div>
         </div>
+
 
         <div class="rating-line">
           <div class="rating-number">6</div>
           <div class="rating-posters"></div>
         </div>
 
+
         <div class="rating-line">
           <div class="rating-number">5</div>
           <div class="rating-posters"></div>
         </div>
+
 
         <div class="rating-line">
           <div class="rating-number">4</div>
           <div class="rating-posters"></div>
         </div>
 
+
         <div class="rating-line">
           <div class="rating-number">3</div>
           <div class="rating-posters"></div>
         </div>
+
 
         <div class="rating-line">
           <div class="rating-number">2</div>
           <div class="rating-posters"></div>
         </div>
 
+
         <div class="rating-line">
           <div class="rating-number">1</div>
           <div class="rating-posters"></div>
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- ===================================== -->
-    <!-- ДОДАТКОВО -->
-    <!-- ===================================== -->
+    <!-- =========================
+         EXTRA
+    ========================== -->
 
-    <section id="extra" class="page">
+    <section
+      id="extra"
+      class="page"
+    >
 
-      <h1>Додатково</h1>
+      <h1>
+        Додатково
+      </h1>
+
 
       <div class="extra-grid">
 
+
+        <!-- FOX DEN -->
+
         <div class="card">
 
-          <h2>Лисяча нора 🦊</h2>
+          <h2>
+            Лисяча нора 🦊
+          </h2>
+
 
           <img
-            class="about-fox"
-            src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/e6f6ee31-e059-4c9f-a939-5c3755060727.png"
-            alt="Неонове лисеня"
+            class="fox-den-image"
+            src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/1f3d9a08-422d-4c8d-be83-d8229253a249.png"
+            alt="Лисяча нора"
           >
 
-          <p style="font-size:17px;line-height:1.7;color:#ddd;">
+
+          <p class="fox-den-text">
             Тут пізніше можемо додати цікаві факти,
             улюблені ігри, кіно, стріми та іншу
             додаткову інформацію.
@@ -843,9 +1143,14 @@
         </div>
 
 
+        <!-- SOCIALS -->
+
         <div class="card">
 
-          <h2>Мої сторінки</h2>
+          <h2>
+            Мої сторінки
+          </h2>
+
 
           <div class="social-grid">
 
@@ -853,9 +1158,9 @@
             <!-- TELEGRAM -->
 
             <a
+              id="telegramCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -873,9 +1178,9 @@
             <!-- DISCORD -->
 
             <a
+              id="discordCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -893,9 +1198,9 @@
             <!-- TIKTOK -->
 
             <a
+              id="tiktokCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -910,12 +1215,32 @@
             </a>
 
 
+            <!-- TWITCH -->
+
+            <a
+              id="twitchCard"
+              class="social-card"
+              href="#"
+            >
+
+              <img
+                src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tw.png"
+                alt="Twitch"
+              >
+
+              <span class="social-name">
+                Twitch
+              </span>
+
+            </a>
+
+
             <!-- YOUTUBE -->
 
             <a
+              id="youtubeCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -933,9 +1258,9 @@
             <!-- DONATIK -->
 
             <a
+              id="donatikCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -953,9 +1278,9 @@
             <!-- MONOBANK -->
 
             <a
+              id="monobankCard"
               class="social-card"
               href="#"
-              onclick="return false;"
             >
 
               <img
@@ -969,39 +1294,40 @@
 
             </a>
 
+
           </div>
 
         </div>
 
+
       </div>
 
     </section>
+
 
   </main>
 
 </div>
 
 
-<!-- ===================================== -->
-<!-- SUPABASE -->
-<!-- ===================================== -->
+<!-- =========================
+     SUPABASE
+========================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
 
 <script>
-
-  /*
-    Твій Supabase.
-    Publishable key можна використовувати
-    у браузерному коді разом із правильно
-    налаштованими RLS-політиками.
-  */
 
   const supabaseUrl =
     "https://mitqazilithqmvuaxupa.supabase.co";
 
+
   const supabaseKey =
     "sb_publishable_aWz6Zf4Av8kUxGu7OlFE5w_-4zJ4y8a";
+
 
   const supabaseClient =
     supabase.createClient(
@@ -1010,9 +1336,14 @@
     );
 
 
-  /* ===== ПЕРЕМИКАННЯ СТОРІНОК ===== */
+  /* =========================
+     PAGE TABS
+  ========================== */
 
-  function showPage(id, button) {
+  function showPage(
+    id,
+    button
+  ) {
 
     document
       .querySelectorAll(".page")
@@ -1020,62 +1351,187 @@
         page.classList.remove("active");
       });
 
+
     document
       .querySelectorAll(".tab")
       .forEach(tab => {
         tab.classList.remove("active");
       });
 
+
     document
       .getElementById(id)
       .classList.add("active");
 
-    button.classList.add("active");
+
+    button
+      .classList.add("active");
+
 
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+
   }
 
 
-  /* ===== ЗАВАНТАЖЕННЯ SITE_SETTINGS ===== */
+  /* =========================
+     SOCIAL LINK
+  ========================== */
+
+  function setSocialLink(
+    elementId,
+    url
+  ) {
+
+    const element =
+      document.getElementById(
+        elementId
+      );
+
+
+    if (!element) {
+      return;
+    }
+
+
+    if (url) {
+
+      element.href = url;
+
+      element.target =
+        "_blank";
+
+      element.rel =
+        "noopener noreferrer";
+
+    } else {
+
+      element.addEventListener(
+        "click",
+        function(event) {
+
+          event.preventDefault();
+
+        }
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     SITE SETTINGS
+  ========================== */
 
   async function loadSiteSettings() {
 
-    const { data, error } =
+    const {
+      data,
+      error
+    } =
       await supabaseClient
         .from("site_settings")
         .select("*")
         .limit(1)
-        .single();
+        .maybeSingle();
 
 
     if (error) {
 
       console.error(
-        "Помилка Supabase:",
+        "Supabase error:",
         error
       );
 
-      document.getElementById("aboutText").textContent =
+
+      document
+        .getElementById(
+          "aboutText"
+        )
+        .textContent =
         "Не вдалося завантажити текст.";
 
       return;
+
     }
 
 
-    if (data && data.about_text) {
+    if (!data) {
 
-      document.getElementById("aboutText").textContent =
+      document
+        .getElementById(
+          "aboutText"
+        )
+        .textContent =
+        "Текст поки не доданий.";
+
+      return;
+
+    }
+
+
+    /* ABOUT */
+
+    if (
+      data.about_text
+    ) {
+
+      document
+        .getElementById(
+          "aboutText"
+        )
+        .textContent =
         data.about_text;
 
-    } else {
-
-      document.getElementById("aboutText").textContent =
-        "Текст «Про мене» поки не доданий.";
-
     }
+
+
+    /* SOCIAL LINKS */
+
+    setSocialLink(
+      "telegramCard",
+      data.telegram_url
+    );
+
+
+    setSocialLink(
+      "discordCard",
+      data.discord_url
+    );
+
+
+    setSocialLink(
+      "tiktokCard",
+      data.tiktok_url
+    );
+
+
+    setSocialLink(
+      "twitchCard",
+      data.twitch_url
+    );
+
+
+    setSocialLink(
+      "youtubeCard",
+      data.youtube_url
+    );
+
+
+    setSocialLink(
+      "donatikCard",
+      data.donatello_url
+    );
+
+
+    setSocialLink(
+      "monobankCard",
+      data.monobank_url
+    );
+
   }
 
 
