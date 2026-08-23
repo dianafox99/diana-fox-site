@@ -12,36 +12,373 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0b0b0d;
-      color: white;
+      background: #09090c;
+      color: #fff;
       font-family: Arial, sans-serif;
     }
 
-    .box {
-      text-align: center;
-      padding: 40px;
+    .site {
+      width: min(1400px, 94%);
+      margin: 40px auto;
+      border: 3px solid #fff;
+      background: #111118;
+      min-height: 850px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #fff;
+      background: #0d0d12;
+    }
+
+    header button {
+      background: white;
+      color: black;
+      border: 2px solid black;
+      padding: 15px 22px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    header button:hover,
+    header button.active {
+      background: #b536d1;
+      color: white;
+    }
+
+    main {
+      padding: 35px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
+      font-size: 52px;
+      margin: 0 0 30px;
     }
 
-    p {
-      color: #aaa;
-      font-size: 18px;
+    h2 {
+      font-size: 32px;
+    }
+
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .card {
+      border: 3px solid #fff;
+      background: #171720;
+      padding: 20px;
+    }
+
+    .video-box {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #b536d1;
+      font-size: 28px;
+      color: #d5a0ff;
+    }
+
+    .marathon-box {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #ffca28;
+      color: #ffca28;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .about {
+      margin-top: 30px;
+      line-height: 1.7;
+      font-size: 19px;
+    }
+
+    .movie-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 25px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 25px;
+    }
+
+    .poster-placeholder {
+      width: 160px;
+      height: 230px;
+      background: #222;
+      border: 2px dashed #777;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .rating-board {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rating-line {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      min-height: 150px;
+      border: 3px solid #fff;
+    }
+
+    .rating-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: bold;
+      border-right: 3px solid #fff;
+      background: #15151c;
+    }
+
+    .rating-posters {
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-poster {
+      width: 85px;
+      height: 120px;
+      background: #24242e;
+      border: 1px dashed #777;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 18px;
+      background: #b536d1;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 850px) {
+      .home-grid,
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header button {
+        flex: 1 1 50%;
+        font-size: 17px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="box">
-    <h1>Diana Fox</h1>
-    <p>Сайт успешно запущен ✨</p>
+
+  <div class="site">
+
+    <header>
+      <button class="tab active" onclick="showPage('home', this)">Главная</button>
+      <button class="tab" onclick="showPage('watch', this)">Просмотр</button>
+      <button class="tab" onclick="showPage('critic', this)">Кино-критик</button>
+      <button class="tab" onclick="showPage('rating', this)">Оценочная категория</button>
+      <button class="tab" onclick="showPage('extra', this)">Дополнительно</button>
+    </header>
+
+    <main>
+
+      <section id="home" class="page active">
+        <h1>Diana Fox</h1>
+
+        <div class="home-grid">
+
+          <div>
+            <div class="card">
+              <h2>Видео-визитка</h2>
+              <div class="video-box">
+                Здесь будет твоя видео-визитка ▶
+              </div>
+            </div>
+
+            <div class="card about">
+              <h2>Обо мне</h2>
+              <p>
+                Здесь будет твой текст о себе.
+                Позже этот текст будет автоматически загружаться из Supabase,
+                и ты сможешь менять его через админку.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Субботний киномарафон 🍿</h2>
+            <div class="marathon-box">
+              Здесь будет твоя картинка-афиша
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="watch" class="page">
+        <h1>Просмотр</h1>
+
+        <h2>Сейчас</h2>
+
+        <div class="movie-row">
+          <div class="poster-placeholder">Постер</div>
+          <div>
+            <h2>Текущий фильм</h2>
+            <p>Год: —</p>
+            <p>Время: —</p>
+            <p>Описание текущего фильма будет здесь.</p>
+          </div>
+        </div>
+
+        <h2>Следующие</h2>
+
+        <div class="movie-row">
+          <div class="poster-placeholder">Постер</div>
+          <div>
+            <h2>Следующий фильм</h2>
+            <p>Год: —</p>
+            <p>Время: —</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="critic" class="page">
+        <h1>Кино-критик</h1>
+
+        <input
+          type="text"
+          placeholder="Поиск по названию..."
+          style="width:100%;padding:16px;font-size:18px;margin-bottom:30px;"
+        >
+
+        <div class="movie-row">
+          <div class="poster-placeholder">Постер</div>
+          <div>
+            <h2>Название фильма</h2>
+            <p>Твоя критика будет здесь.</p>
+            <h3>Оценка: — / 10</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="rating" class="page">
+        <h1>Оценочная категория</h1>
+
+        <div class="rating-board">
+          <div class="rating-line">
+            <div class="rating-number">10</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">9</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">8</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">7</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">6</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">5</div>
+            <div class="rating-posters"></div>
+          </div>
+
+          <div class="rating-line">
+            <div class="rating-number">4</div>
+            <div class="rating-posters"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="extra" class="page">
+        <h1>Дополнительно</h1>
+
+        <div class="extra-grid">
+
+          <div class="card">
+            <h2>Обо мне / дополнительная информация</h2>
+            <p>
+              Здесь позже будет твой дополнительный текст и картинка.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Мои страницы</h2>
+
+            <div class="socials">
+              <a href="#">Twitch</a>
+              <a href="#">Telegram</a>
+              <a href="#">Discord</a>
+              <a href="#">YouTube</a>
+              <a href="#">TikTok</a>
+              <a href="#">Donatello</a>
+              <a href="#">Monobank</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
   </div>
+
+  <script>
+    function showPage(id, button) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      document.getElementById(id).classList.add('active');
+      button.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
