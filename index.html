@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Diana Fox</title>
 
   <style>
@@ -89,6 +90,14 @@
       border: 2px dashed #b536d1;
       font-size: 28px;
       color: #d5a0ff;
+      overflow: hidden;
+    }
+
+    .video-box iframe,
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .marathon-box {
@@ -100,12 +109,23 @@
       color: #ffca28;
       font-size: 28px;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .marathon-box img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .about {
       margin-top: 30px;
       line-height: 1.7;
       font-size: 19px;
+    }
+
+    #aboutText {
+      white-space: pre-line;
     }
 
     .movie-row {
@@ -172,13 +192,22 @@
     }
 
     .socials a {
-      display: inline-block;
+      display: none;
       margin: 8px;
       padding: 12px 18px;
       background: #b536d1;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+    }
+
+    .error-message {
+      display: none;
+      background: #411;
+      border: 1px solid #a44;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
     }
 
     @media (max-width: 850px) {
@@ -204,98 +233,183 @@
   <div class="site">
 
     <header>
-      <button class="tab active" onclick="showPage('home', this)">Главная</button>
-      <button class="tab" onclick="showPage('watch', this)">Просмотр</button>
-      <button class="tab" onclick="showPage('critic', this)">Кино-критик</button>
-      <button class="tab" onclick="showPage('rating', this)">Оценочная категория</button>
-      <button class="tab" onclick="showPage('extra', this)">Дополнительно</button>
+      <button class="tab active" onclick="showPage('home', this)">
+        Головна
+      </button>
+
+      <button class="tab" onclick="showPage('watch', this)">
+        Перегляд
+      </button>
+
+      <button class="tab" onclick="showPage('critic', this)">
+        Кіно-критик
+      </button>
+
+      <button class="tab" onclick="showPage('rating', this)">
+        Оціночна категорія
+      </button>
+
+      <button class="tab" onclick="showPage('extra', this)">
+        Додатково
+      </button>
     </header>
 
     <main>
 
+      <div id="errorMessage" class="error-message">
+        Не вдалося завантажити дані сайту.
+      </div>
+
+      <!-- ГОЛОВНА -->
+
       <section id="home" class="page active">
-        <h1>Diana Fox</h1>
+
+        <h1>Diana Fox 🦊</h1>
 
         <div class="home-grid">
 
           <div>
+
             <div class="card">
-              <h2>Видео-визитка</h2>
-              <div class="video-box">
-                Здесь будет твоя видео-визитка ▶
+
+              <h2>Відеовізитка</h2>
+
+              <div id="videoBox" class="video-box">
+                Тут буде твоя відеовізитка ▶
               </div>
+
             </div>
 
             <div class="card about">
-              <h2>Обо мне</h2>
-              <p>
-                Здесь будет твой текст о себе.
-                Позже этот текст будет автоматически загружаться из Supabase,
-                и ты сможешь менять его через админку.
+
+              <h2>Про мене</h2>
+
+              <p id="aboutText">
+                Завантаження...
               </p>
+
             </div>
+
           </div>
 
           <div class="card">
-            <h2>Субботний киномарафон 🍿</h2>
-            <div class="marathon-box">
-              Здесь будет твоя картинка-афиша
+
+            <h2>Суботній кіномарафон 🍿</h2>
+
+            <div id="marathonBox" class="marathon-box">
+              Тут буде твоя картинка-афіша
             </div>
+
           </div>
 
         </div>
+
       </section>
+
+
+      <!-- ПЕРЕГЛЯД -->
 
       <section id="watch" class="page">
-        <h1>Просмотр</h1>
 
-        <h2>Сейчас</h2>
+        <h1>Перегляд</h1>
 
-        <div class="movie-row">
-          <div class="poster-placeholder">Постер</div>
-          <div>
-            <h2>Текущий фильм</h2>
-            <p>Год: —</p>
-            <p>Время: —</p>
-            <p>Описание текущего фильма будет здесь.</p>
-          </div>
-        </div>
-
-        <h2>Следующие</h2>
+        <h2>Зараз</h2>
 
         <div class="movie-row">
-          <div class="poster-placeholder">Постер</div>
-          <div>
-            <h2>Следующий фильм</h2>
-            <p>Год: —</p>
-            <p>Время: —</p>
+
+          <div class="poster-placeholder">
+            Постер
           </div>
+
+          <div>
+
+            <h2>Поточний фільм</h2>
+
+            <p>Рік: —</p>
+
+            <p>Час: —</p>
+
+            <p>
+              Опис поточного фільму буде тут.
+            </p>
+
+          </div>
+
         </div>
+
+        <h2>Наступні</h2>
+
+        <div class="movie-row">
+
+          <div class="poster-placeholder">
+            Постер
+          </div>
+
+          <div>
+
+            <h2>Наступний фільм</h2>
+
+            <p>Рік: —</p>
+
+            <p>Час: —</p>
+
+          </div>
+
+        </div>
+
       </section>
 
+
+      <!-- КІНО-КРИТИК -->
+
       <section id="critic" class="page">
-        <h1>Кино-критик</h1>
+
+        <h1>Кіно-критик</h1>
 
         <input
           type="text"
-          placeholder="Поиск по названию..."
-          style="width:100%;padding:16px;font-size:18px;margin-bottom:30px;"
+          placeholder="Пошук за назвою..."
+          style="
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            margin-bottom: 30px;
+          "
         >
 
         <div class="movie-row">
-          <div class="poster-placeholder">Постер</div>
-          <div>
-            <h2>Название фильма</h2>
-            <p>Твоя критика будет здесь.</p>
-            <h3>Оценка: — / 10</h3>
+
+          <div class="poster-placeholder">
+            Постер
           </div>
+
+          <div>
+
+            <h2>Назва фільму</h2>
+
+            <p>
+              Твоя рецензія буде тут.
+            </p>
+
+            <h3>
+              Оцінка: — / 10
+            </h3>
+
+          </div>
+
         </div>
+
       </section>
 
+
+      <!-- ОЦІНКИ -->
+
       <section id="rating" class="page">
-        <h1>Оценочная категория</h1>
+
+        <h1>Оціночна категорія</h1>
 
         <div class="rating-board">
+
           <div class="rating-line">
             <div class="rating-number">10</div>
             <div class="rating-posters"></div>
@@ -330,54 +444,326 @@
             <div class="rating-number">4</div>
             <div class="rating-posters"></div>
           </div>
+
         </div>
+
       </section>
 
+
+      <!-- ДОДАТКОВО -->
+
       <section id="extra" class="page">
-        <h1>Дополнительно</h1>
+
+        <h1>Додатково</h1>
 
         <div class="extra-grid">
 
           <div class="card">
-            <h2>Обо мне / дополнительная информация</h2>
+
+            <h2>Додаткова інформація</h2>
+
             <p>
-              Здесь позже будет твой дополнительный текст и картинка.
+              Тут буде твій додатковий текст і картинка.
             </p>
+
           </div>
 
           <div class="card">
-            <h2>Мои страницы</h2>
+
+            <h2>Мої сторінки</h2>
 
             <div class="socials">
-              <a href="#">Twitch</a>
-              <a href="#">Telegram</a>
-              <a href="#">Discord</a>
-              <a href="#">YouTube</a>
-              <a href="#">TikTok</a>
-              <a href="#">Donatello</a>
-              <a href="#">Monobank</a>
+
+              <a id="twitchLink" target="_blank" rel="noopener">
+                Twitch
+              </a>
+
+              <a id="telegramLink" target="_blank" rel="noopener">
+                Telegram
+              </a>
+
+              <a id="discordLink" target="_blank" rel="noopener">
+                Discord
+              </a>
+
+              <a id="youtubeLink" target="_blank" rel="noopener">
+                YouTube
+              </a>
+
+              <a id="tiktokLink" target="_blank" rel="noopener">
+                TikTok
+              </a>
+
+              <a id="donatelloLink" target="_blank" rel="noopener">
+                Donatello
+              </a>
+
+              <a id="monobankLink" target="_blank" rel="noopener">
+                Monobank
+              </a>
+
             </div>
+
           </div>
 
         </div>
+
       </section>
 
     </main>
+
   </div>
 
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
   <script>
+
+    /* ПЕРЕМИКАННЯ СТОРІНОК */
+
     function showPage(id, button) {
-      document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-      });
 
-      document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
+      document
+        .querySelectorAll('.page')
+        .forEach(page => {
+          page.classList.remove('active');
+        });
 
-      document.getElementById(id).classList.add('active');
-      button.classList.add('active');
+      document
+        .querySelectorAll('.tab')
+        .forEach(tab => {
+          tab.classList.remove('active');
+        });
+
+      document
+        .getElementById(id)
+        .classList
+        .add('active');
+
+      button
+        .classList
+        .add('active');
     }
+
+
+    /* ПІДКЛЮЧЕННЯ SUPABASE */
+
+    const supabaseUrl =
+      'https://mitqazilithqmvuaxupa.supabase.co';
+
+    const supabaseKey =
+      'sb_publishable_aWz6Zf4Av8kUxGu7OlFE5w_-4zJ4y8a';
+
+    const supabaseClient =
+      supabase.createClient(
+        supabaseUrl,
+        supabaseKey
+      );
+
+
+    /* ЗАВАНТАЖЕННЯ НАЛАШТУВАНЬ */
+
+    async function loadSiteSettings() {
+
+      const {
+        data,
+        error
+      } = await supabaseClient
+        .from('site_settings')
+        .select('*')
+        .limit(1)
+        .maybeSingle();
+
+
+      if (error) {
+
+        console.error(
+          'Помилка Supabase:',
+          error
+        );
+
+        document
+          .getElementById('errorMessage')
+          .style.display = 'block';
+
+        return;
+      }
+
+
+      if (!data) {
+
+        document
+          .getElementById('aboutText')
+          .textContent =
+          'Додай дані в таблицю site_settings у Supabase.';
+
+        return;
+      }
+
+
+      /* ПРО МЕНЕ */
+
+      if (data.about_text) {
+
+        document
+          .getElementById('aboutText')
+          .textContent =
+          data.about_text;
+      }
+
+
+      /* АФІША КІНОМАРАФОНУ */
+
+      if (data.marathon_poster_url) {
+
+        document
+          .getElementById('marathonBox')
+          .innerHTML =
+          '<img src="' +
+          data.marathon_poster_url +
+          '" alt="Афіша кіномарафону">';
+      }
+
+
+      /* ВІДЕОВІЗИТКА */
+
+      if (data.intro_video_url) {
+
+        const videoUrl =
+          data.intro_video_url;
+
+        const videoBox =
+          document.getElementById('videoBox');
+
+
+        if (
+          videoUrl.includes('youtube.com') ||
+          videoUrl.includes('youtu.be')
+        ) {
+
+          let videoId = '';
+
+          try {
+
+            const url =
+              new URL(videoUrl);
+
+            if (
+              url.hostname.includes('youtu.be')
+            ) {
+
+              videoId =
+                url.pathname.replace('/', '');
+
+            } else {
+
+              videoId =
+                url.searchParams.get('v');
+            }
+
+          } catch (e) {
+
+            console.error(
+              'Невірне посилання на відео',
+              e
+            );
+          }
+
+
+          if (videoId) {
+
+            videoBox.innerHTML =
+              '<iframe ' +
+              'src="https://www.youtube.com/embed/' +
+              videoId +
+              '" ' +
+              'title="Відеовізитка" ' +
+              'allowfullscreen>' +
+              '</iframe>';
+          }
+
+        } else {
+
+          videoBox.innerHTML =
+            '<video controls src="' +
+            videoUrl +
+            '"></video>';
+        }
+      }
+
+
+      /* СОЦМЕРЕЖІ */
+
+      setSocialLink(
+        'twitchLink',
+        data.twitch_url
+      );
+
+      setSocialLink(
+        'telegramLink',
+        data.telegram_url
+      );
+
+      setSocialLink(
+        'discordLink',
+        data.discord_url
+      );
+
+      setSocialLink(
+        'youtubeLink',
+        data.youtube_url
+      );
+
+      setSocialLink(
+        'tiktokLink',
+        data.tiktok_url
+      );
+
+      setSocialLink(
+        'donatelloLink',
+        data.donatello_url
+      );
+
+      setSocialLink(
+        'monobankLink',
+        data.monobank_url
+      );
+
+    }
+
+
+    function setSocialLink(
+      elementId,
+      url
+    ) {
+
+      const element =
+        document.getElementById(
+          elementId
+        );
+
+
+      if (
+        element &&
+        url
+      ) {
+
+        element.href = url;
+
+        element.style.display =
+          'inline-block';
+      }
+
+    }
+
+
+    /* ЗАПУСК */
+
+    loadSiteSettings();
+
   </script>
 
 </body>
