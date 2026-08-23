@@ -48,18 +48,27 @@
       margin: 20px auto 60px;
     }
 
+    /* =========================
+       MENU
+    ========================= */
+
     header {
       position: sticky;
       top: 10px;
       z-index: 50;
+
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+
       padding: 8px;
+
       background: rgba(12, 5, 18, 0.93);
       border: 1px solid var(--border);
       border-radius: 17px;
+
       backdrop-filter: blur(15px);
+
       box-shadow:
         0 12px 35px rgba(0,0,0,.35),
         0 0 22px rgba(181, 44, 244, .10);
@@ -69,11 +78,16 @@
       border: 0;
       background: transparent;
       color: #eee;
+
       padding: 14px 22px;
+
       border-radius: 12px;
+
       font-size: 16px;
       font-weight: 700;
+
       cursor: pointer;
+
       transition:
         transform .2s ease,
         background .2s ease,
@@ -92,10 +106,16 @@
           #c139ee,
           #8c27e8
         );
+
       color: white;
+
       box-shadow:
         0 0 22px rgba(194, 55, 245, .38);
     }
+
+    /* =========================
+       PAGE
+    ========================= */
 
     main {
       margin-top: 18px;
@@ -103,16 +123,22 @@
 
     .page {
       display: none;
+
       padding: 28px;
+
       border-radius: 22px;
+
       background:
         linear-gradient(
           145deg,
           rgba(15, 6, 22, .91),
           rgba(8, 3, 14, .94)
         );
+
       border: 1px solid rgba(198, 63, 255, .26);
+
       backdrop-filter: blur(9px);
+
       animation: pageIn .3s ease;
     }
 
@@ -151,48 +177,46 @@
       color: var(--muted);
     }
 
+    /* =========================
+       CARD
+    ========================= */
+
     .card {
       padding: 22px;
+
       border-radius: 18px;
+
       border: 1px solid rgba(203, 65, 255, .42);
+
       background:
         linear-gradient(
           145deg,
           rgba(37, 15, 45, .90),
           rgba(18, 8, 27, .92)
         );
+
       box-shadow:
         0 15px 35px rgba(0,0,0,.22),
         inset 0 0 30px rgba(190, 50, 240, .035);
     }
 
-    .title-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    /* =========================
+       HOME
+    ========================= */
+
+    .home-title {
       margin-bottom: 28px;
-    }
-
-    .title-row h1 {
-      margin: 0;
-    }
-
-    .title-fox {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow:
-        0 0 15px rgba(255, 56, 222, .45),
-        0 0 30px rgba(174, 46, 255, .22);
     }
 
     .home-grid {
       display: grid;
+
       grid-template-columns:
         minmax(0, 1.5fr)
         minmax(320px, .9fr);
+
       gap: 18px;
+
       align-items: start;
     }
 
@@ -202,13 +226,22 @@
       gap: 18px;
     }
 
+    /* =========================
+       VIDEO
+    ========================= */
+
     .video-frame {
       position: relative;
+
       width: 100%;
       aspect-ratio: 16 / 9;
+
       overflow: hidden;
+
       border-radius: 14px;
+
       background: #000;
+
       box-shadow:
         0 0 0 1px rgba(203, 65, 255, .15),
         0 12px 30px rgba(0,0,0,.35);
@@ -217,19 +250,32 @@
     .video-frame iframe {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       border: 0;
     }
+
+    /* =========================
+       MARATHON
+    ========================= */
 
     .marathon-image {
       width: 100%;
       height: auto;
+
       display: block;
+
       border-radius: 14px;
+
       box-shadow:
         0 12px 28px rgba(0,0,0,.38);
     }
+
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about-card {
       padding: 26px;
@@ -241,9 +287,12 @@
 
     .about-layout {
       display: grid;
+
       grid-template-columns:
         220px minmax(0, 1fr);
+
       gap: 30px;
+
       align-items: center;
     }
 
@@ -256,23 +305,34 @@
     .about-photo {
       width: 210px;
       height: 300px;
+
       object-fit: cover;
+
       border-radius: 20px;
+
       border:
         1px solid
         rgba(231, 88, 255, .65);
+
       box-shadow:
         0 0 18px rgba(255, 54, 220, .35),
         0 0 35px rgba(157, 54, 255, .20);
+
       display: block;
     }
 
     .about-text {
       white-space: pre-line;
+
       font-size: 18px;
       line-height: 1.75;
+
       color: #eee;
     }
+
+    /* =========================
+       WATCH
+    ========================= */
 
     .section-label {
       font-size: 27px;
@@ -281,14 +341,20 @@
 
     .movie-row {
       display: grid;
+
       grid-template-columns:
         150px minmax(0, 1fr);
+
       gap: 24px;
+
       padding: 18px;
       margin-bottom: 15px;
+
       border-radius: 15px;
+
       background:
         rgba(28, 13, 35, .86);
+
       border:
         1px solid
         rgba(196, 61, 255, .30);
@@ -297,11 +363,15 @@
     .movie-poster {
       width: 140px;
       height: 205px;
+
       object-fit: cover;
+
       border-radius: 12px;
+
       border:
         1px solid
         rgba(255,255,255,.13);
+
       box-shadow:
         0 8px 22px rgba(0,0,0,.35);
     }
@@ -309,17 +379,26 @@
     .poster-placeholder {
       width: 140px;
       height: 205px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       border-radius: 12px;
+
       background:
         rgba(255,255,255,.04);
+
       border:
         1px solid
         rgba(255,255,255,.13);
+
       color: #aaa;
     }
+
+    /* =========================
+       CRITIC
+    ========================= */
 
     .movie-title {
       margin-bottom: 8px;
@@ -329,44 +408,60 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+
       margin-bottom: 12px;
     }
 
     .movie-badge {
       padding: 6px 10px;
+
       border-radius: 999px;
+
       font-size: 14px;
+
       background:
         rgba(186, 44, 244, .16);
+
       border:
         1px solid
         rgba(210, 80, 255, .35);
+
       color: #f3dfff;
     }
 
     .movie-review {
       white-space: pre-line;
+
       line-height: 1.65;
+
       color: #e8deed;
+
       margin-bottom: 12px;
     }
 
     .movie-description {
       color: #bfaec8;
+
       font-size: 15px;
       line-height: 1.55;
     }
 
     .search-input {
       width: 100%;
+
       padding: 15px 18px;
       margin-bottom: 22px;
+
       color: white;
       font-size: 17px;
+
       outline: none;
+
       border-radius: 12px;
+
       background:
         rgba(20, 8, 28, .92);
+
       border:
         1px solid
         rgba(194, 60, 255, .42);
@@ -374,6 +469,7 @@
 
     .search-input:focus {
       border-color: #d060ff;
+
       box-shadow:
         0 0 16px
         rgba(196, 62, 255, .18);
@@ -381,30 +477,42 @@
 
     .empty-state {
       padding: 24px;
+
       text-align: center;
+
       color: #c9b8d2;
+
       border:
         1px dashed
         rgba(199, 70, 255, .35);
+
       border-radius: 14px;
     }
+
+    /* =========================
+       RATING
+    ========================= */
 
     .rating-board {
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
     }
 
     .rating-line {
       display: grid;
+
       grid-template-columns:
-        80px 1fr;
-      min-height: 140px;
+        80px minmax(0, 1fr);
+
       overflow: hidden;
+
       border-radius: 14px;
+
       border:
         1px solid
         rgba(195, 63, 255, .33);
+
       background:
         rgba(25, 11, 32, .86);
     }
@@ -413,65 +521,113 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      min-height: 190px;
+
       font-size: 31px;
       font-weight: bold;
+
       background:
         linear-gradient(
           135deg,
           rgba(194, 61, 255, .30),
           rgba(104, 36, 172, .19)
         );
+
       border-right:
         1px solid
         rgba(196, 65, 255, .30);
     }
 
     .rating-posters {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding: 12px;
-      align-items: flex-start;
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(125px, 1fr)
+        );
+
+      gap: 16px;
+
+      padding: 14px;
+
+      align-items: start;
     }
 
     .rating-poster-card {
-      width: 95px;
+      width: 100%;
+      max-width: 125px;
+
+      justify-self: center;
+
       text-align: center;
     }
 
     .rating-poster-card img {
-      width: 95px;
-      height: 140px;
+      width: 110px;
+      height: 165px;
+
       object-fit: cover;
+
       display: block;
-      border-radius: 10px;
+
+      margin: 0 auto;
+
+      border-radius: 11px;
+
       border:
         1px solid
         rgba(255,255,255,.14);
+
       box-shadow:
-        0 7px 18px rgba(0,0,0,.32);
+        0 8px 20px rgba(0,0,0,.34);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .rating-poster-card img:hover {
+      transform: translateY(-4px) scale(1.03);
+
+      box-shadow:
+        0 12px 28px rgba(0,0,0,.40),
+        0 0 15px rgba(194, 53, 246, .20);
     }
 
     .rating-poster-title {
-      margin-top: 7px;
+      margin-top: 8px;
+
       font-size: 12px;
-      line-height: 1.25;
+      line-height: 1.3;
+
       color: #e7dbe9;
     }
 
+    /* =========================
+       EXTRA
+    ========================= */
+
     .extra-grid {
       display: grid;
+
       grid-template-columns:
         .9fr 1.8fr;
+
       gap: 18px;
     }
 
     .fox-den-image {
       width: 100%;
       max-width: 360px;
+
       display: block;
+
       margin: 10px auto 20px;
+
       border-radius: 18px;
+
       box-shadow:
         0 0 20px rgba(255, 57, 223, .25);
     }
@@ -481,25 +637,39 @@
       line-height: 1.7;
     }
 
+    /* =========================
+       SOCIALS
+    ========================= */
+
     .social-grid {
       display: grid;
+
       grid-template-columns:
         repeat(4, 1fr);
+
       gap: 14px;
     }
 
     .social-card {
       position: relative;
+
       display: block;
+
       overflow: hidden;
+
       min-height: 160px;
+
       border-radius: 15px;
+
       background:
         rgba(8, 4, 12, .88);
+
       border:
         1px solid
         rgba(197, 64, 255, .42);
+
       text-decoration: none;
+
       transition:
         transform .22s ease,
         box-shadow .22s ease,
@@ -510,8 +680,10 @@
       transform:
         translateY(-5px)
         scale(1.025);
+
       border-color:
         rgba(235, 120, 255, .86);
+
       box-shadow:
         0 12px 30px rgba(0,0,0,.35),
         0 0 18px rgba(194, 53, 246, .25);
@@ -520,26 +692,40 @@
     .social-card img {
       width: 100%;
       height: 160px;
+
       display: block;
+
       object-fit: cover;
     }
 
     .social-name {
       position: absolute;
+
       left: 8px;
       right: 8px;
       bottom: 8px;
+
       padding: 8px 10px;
+
       border-radius: 9px;
+
       color: white;
+
       font-weight: 700;
       text-align: center;
+
       background:
         rgba(6, 3, 9, .78);
+
       backdrop-filter: blur(7px);
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 950px) {
+
       .home-grid,
       .extra-grid {
         grid-template-columns: 1fr;
@@ -549,9 +735,18 @@
         grid-template-columns:
           repeat(3, 1fr);
       }
+
+      .rating-posters {
+        grid-template-columns:
+          repeat(
+            auto-fill,
+            minmax(115px, 1fr)
+          );
+      }
     }
 
     @media (max-width: 760px) {
+
       .about-layout {
         grid-template-columns: 1fr;
       }
@@ -568,6 +763,7 @@
     }
 
     @media (max-width: 600px) {
+
       .site {
         width: 96%;
         margin-top: 8px;
@@ -583,18 +779,16 @@
 
       header button {
         flex: 1 1 45%;
-        padding: 11px 10px;
-        font-size: 14px;
-      }
 
-      .title-fox {
-        width: 52px;
-        height: 52px;
+        padding: 11px 10px;
+
+        font-size: 14px;
       }
 
       .movie-row {
         grid-template-columns:
           100px 1fr;
+
         gap: 14px;
       }
 
@@ -602,6 +796,35 @@
       .poster-placeholder {
         width: 95px;
         height: 145px;
+      }
+
+      .rating-line {
+        grid-template-columns:
+          58px minmax(0, 1fr);
+      }
+
+      .rating-number {
+        min-height: 165px;
+        font-size: 25px;
+      }
+
+      .rating-posters {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        gap: 12px;
+      }
+
+      .rating-poster-card {
+        max-width: 115px;
+      }
+
+      .rating-poster-card img {
+        width: 100px;
+        height: 150px;
       }
 
       .social-card,
@@ -643,19 +866,15 @@
 
   <main>
 
+    <!-- =========================
+         HOME
+    ========================= -->
+
     <section id="home" class="page active">
 
-      <div class="title-row">
-
-        <h1>Diana Fox</h1>
-
-        <img
-          class="title-fox"
-          src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/e6f6ee31-e059-4c9f-a939-5c3755060727.png"
-          alt="Diana Fox"
-        >
-
-      </div>
+      <h1 class="home-title">
+        Diana Fox
+      </h1>
 
       <div class="home-grid">
 
@@ -663,7 +882,9 @@
 
           <div class="card">
 
-            <h2>Відеовізитка</h2>
+            <h2>
+              Відеовізитка
+            </h2>
 
             <div class="video-frame">
 
@@ -680,7 +901,9 @@
 
           <div class="card about-card">
 
-            <h2>Про мене</h2>
+            <h2>
+              Про мене
+            </h2>
 
             <div class="about-layout">
 
@@ -725,9 +948,15 @@
 
     </section>
 
+    <!-- =========================
+         WATCH
+    ========================= -->
+
     <section id="watch" class="page">
 
-      <h1>Перегляд</h1>
+      <h1>
+        Перегляд
+      </h1>
 
       <h2 class="section-label">
         Зараз
@@ -745,12 +974,16 @@
             Поточний фільм
           </h2>
 
-          <p>Рік: —</p>
-
-          <p>Час: —</p>
+          <p>
+            Рік: —
+          </p>
 
           <p>
-            Чергу перегляду підключимо наступним кроком через watch_queue.
+            Час: —
+          </p>
+
+          <p>
+            Чергу перегляду підключимо через watch_queue.
           </p>
 
         </div>
@@ -762,10 +995,14 @@
       </h2>
 
       <div class="empty-state">
-        Тут пізніше автоматично з'явиться черга з таблиці watch_queue.
+        Тут автоматично з'явиться черга з таблиці watch_queue.
       </div>
 
     </section>
+
+    <!-- =========================
+         CRITIC
+    ========================= -->
 
     <section id="critic" class="page">
 
@@ -789,6 +1026,10 @@
       </div>
 
     </section>
+
+    <!-- =========================
+         RATING
+    ========================= -->
 
     <section id="rating" class="page">
 
@@ -852,6 +1093,10 @@
 
     </section>
 
+    <!-- =========================
+         EXTRA
+    ========================= -->
+
     <section id="extra" class="page">
 
       <h1>
@@ -893,9 +1138,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tg.png"
                 alt="Telegram"
               >
-              <span class="social-name">
-                Telegram
-              </span>
+              <span class="social-name">Telegram</span>
             </a>
 
             <a id="discordCard" class="social-card" href="#">
@@ -903,9 +1146,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/ds.png"
                 alt="Discord"
               >
-              <span class="social-name">
-                Discord
-              </span>
+              <span class="social-name">Discord</span>
             </a>
 
             <a id="tiktokCard" class="social-card" href="#">
@@ -913,9 +1154,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tt.png"
                 alt="TikTok"
               >
-              <span class="social-name">
-                TikTok
-              </span>
+              <span class="social-name">TikTok</span>
             </a>
 
             <a id="twitchCard" class="social-card" href="#">
@@ -923,9 +1162,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/tw.png"
                 alt="Twitch"
               >
-              <span class="social-name">
-                Twitch
-              </span>
+              <span class="social-name">Twitch</span>
             </a>
 
             <a id="youtubeCard" class="social-card" href="#">
@@ -933,9 +1170,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/yt.png"
                 alt="YouTube"
               >
-              <span class="social-name">
-                YouTube
-              </span>
+              <span class="social-name">YouTube</span>
             </a>
 
             <a id="donatikCard" class="social-card" href="#">
@@ -943,9 +1178,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/dona.png"
                 alt="Donatik"
               >
-              <span class="social-name">
-                Donatik
-              </span>
+              <span class="social-name">Donatik</span>
             </a>
 
             <a id="monobankCard" class="social-card" href="#">
@@ -953,9 +1186,7 @@
                 src="https://mitqazilithqmvuaxupa.supabase.co/storage/v1/object/public/site-media/site/mon.png"
                 alt="Monobank"
               >
-              <span class="social-name">
-                Monobank
-              </span>
+              <span class="social-name">Monobank</span>
             </a>
 
           </div>
@@ -988,6 +1219,10 @@
 
   let allMovies = [];
 
+  /* =========================
+     TABS
+  ========================= */
+
   function showPage(id, button) {
 
     document
@@ -1014,6 +1249,10 @@
     });
 
   }
+
+  /* =========================
+     SOCIALS
+  ========================= */
 
   function setSocialLink(
     elementId,
@@ -1047,6 +1286,10 @@
     }
 
   }
+
+  /* =========================
+     SITE SETTINGS
+  ========================= */
 
   async function loadSiteSettings() {
 
@@ -1129,6 +1372,10 @@
 
   }
 
+  /* =========================
+     MOVIES
+  ========================= */
+
   async function loadMovies() {
 
     const {
@@ -1140,8 +1387,8 @@
         .select("*")
         .eq("is_visible", true)
         .order(
-          "created_at",
-          { ascending: false }
+          "title",
+          { ascending: true }
         );
 
     if (error) {
@@ -1168,6 +1415,23 @@
     allMovies =
       data || [];
 
+    /*
+      Додаткове локальне сортування
+      українською мовою.
+    */
+
+    allMovies.sort(
+      (a, b) =>
+        String(a.title || "")
+          .localeCompare(
+            String(b.title || ""),
+            "uk",
+            {
+              sensitivity: "base"
+            }
+          )
+    );
+
     renderCriticMovies(
       allMovies
     );
@@ -1177,6 +1441,10 @@
     );
 
   }
+
+  /* =========================
+     CRITIC CARDS
+  ========================= */
 
   function renderCriticMovies(
     movies
@@ -1232,7 +1500,8 @@
 
           const category =
             movie.category
-            ? `
+            ?
+            `
               <span class="movie-badge">
                 ${escapeHtml(movie.category)}
               </span>
@@ -1299,6 +1568,10 @@
 
   }
 
+  /* =========================
+     RATINGS
+  ========================= */
+
   function renderRatings(
     movies
   ) {
@@ -1337,10 +1610,21 @@
       const poster =
         movie.poster_url
         ?
-        `<img src="${escapeHtml(movie.poster_url)}" alt="${escapeHtml(movie.title || "Фільм")}">`
+        `
+          <img
+            src="${escapeHtml(movie.poster_url)}"
+            alt="${escapeHtml(movie.title || "Фільм")}"
+          >
+        `
         :
         `
-          <div class="poster-placeholder" style="width:95px;height:140px;">
+          <div
+            class="poster-placeholder"
+            style="
+              width:110px;
+              height:165px;
+            "
+          >
             Постер
           </div>
         `;
@@ -1364,9 +1648,11 @@
 
   }
 
-  function escapeHtml(
-    value
-  ) {
+  /* =========================
+     SECURITY
+  ========================= */
+
+  function escapeHtml(value) {
 
     return String(value ?? "")
       .replaceAll("&", "&amp;")
@@ -1376,6 +1662,10 @@
       .replaceAll("'", "&#039;");
 
   }
+
+  /* =========================
+     SEARCH
+  ========================= */
 
   document
     .getElementById(
@@ -1407,6 +1697,10 @@
 
       }
     );
+
+  /* =========================
+     START
+  ========================= */
 
   loadSiteSettings();
   loadMovies();
